@@ -1,0 +1,7 @@
+<View
+    controllerName="SapUI5Tutorial.RootApp"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout" height="100%">
+    <App id="masterAppView"/>
+</View>

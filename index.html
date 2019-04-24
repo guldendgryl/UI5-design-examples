@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>SapUI5 Tutorial</title>
+        <link rel="stylesheet" href="resources/css/global.css"/>
+        <script
+            id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table"
+            data-sap-ui-bindingsyntax="complex"
+            data-sap-ui-compatversion="edge"
+            data-sap-ui-resourceroots='{
+            "SapUI5Tutorial": "./"
+         }'></script>
+        <script>
+            sap.ui.getCore().attachInit(function () {
+					new sap.m.Shell({
+						app : new sap.ui.core.ComponentContainer({
+							name : "SapUI5Tutorial",
+							height : "100%"
+						})
+					}).placeAt("content");
+            });
+            var dashboardView;
+            var oModel = new sap.ui.model.json.JSONModel;
+            oModel.setSizeLimit(5000);
+            sap.ui.getCore().setModel(oModel);
+        </script>
+    </head>
+    <body class="sapUiBody sapUiSizeCompact" id="content">
+    </body>
+</html>

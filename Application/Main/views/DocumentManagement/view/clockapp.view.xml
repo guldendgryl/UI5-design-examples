@@ -1,0 +1,74 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.Main.views.DocumentManagement.controller.clockapp" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:core="sap.ui.core" 
+    xmlns:f="sap.f" height="100%" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns:grid="sap.ui.layout.cssgrid">
+
+    <Page title="Centered Title" class="page" showNavButton="true" enableScrolling="false" showHeader="false">
+        <content>
+            <HBox class="container">
+                <VBox class="left-content">
+                     <Carousel loop="true">
+                        <pages>
+                            <Image src="/resources/images/carousel.png" alt="Example picture of speakers"/> 
+                            <Button type="Reject" text="Reject" press="onPress" class="carousel-button" ariaDescribedBy="rejectButtonDescription genericButtonDescription">
+                                <layoutData>
+                                    <FlexItemData growFactor="1"/>
+                                </layoutData>
+                            </Button>
+                            <Image src="{img>/products/pic2}" alt="Example picture of USB flash drive"/>
+                        </pages>
+                    </Carousel> 
+                </VBox>
+                 <VBox class="right-content">
+                  
+
+                    <ScrollContainer height="100%" width="100%" class="scroll-style" horizontal="true" vertical="true" focusable="false">
+                           <HBox alignItems="End" justifyContent="End" class="icon-box">
+                   
+                            <core:Icon src="search" class="icon" size="15px" color="#031E48"/>
+                       
+                     
+                            <core:Icon src="cart" class="icon" size="15px" color="#031E48"/>
+                     
+                      
+                            <core:Icon src="menu" class="icon" size="15px" color="#031E48"/>
+                      
+                    </HBox> 
+                        
+                        <l:Grid defaultSpan="XL4 L4 M6 S12" hSpacing="0" vSpacing="0" content="{/clockModel}" class="grid-style">
+
+                            <VBox class="clockbox">
+                                <VBox class="like" alignItems="End" justifyContent="End">
+                                    <core:Icon src="thumb-up" size="15px" color="gray"/>
+                                </VBox>
+                                <Image src="{firstimage}" class="grid-image-style">
+                                </Image>
+                                <Text text="{info}" class="info"/>
+                                <Text text="{money}" class="money"/>
+                                <VBox class="quıckview-btn">
+                                    <Button class="buton" text="QUICK VIEW" press="Press" app:id="{id}">
+                                    </Button>
+                                </VBox>
+                                <customData>
+                                    <core:CustomData key="clock" value="{class}" writeToDom="true"/>
+                                </customData>
+                            </VBox>
+
+                        </l:Grid>
+
+                    </ScrollContainer> 
+                </VBox> 
+
+
+
+
+
+            </HBox>
+        </content>
+
+    </Page>
+</mvc:View>

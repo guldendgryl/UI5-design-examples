@@ -1,0 +1,113 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.Main.views.DocumentManagement.controller.hastakayit" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core" 
+    xmlns:f="sap.f" height="100%">
+    <Page class="sapUiResponsiveContentPadding" showHeader="false">
+        <content>
+            <HBox alignItems="Start" justifyContent="Start">
+                <Text text="E Sağlık Doktor/Hasta Bilgileri" class="nav-info"/>
+            </HBox>
+            <HBox class="content-nav">
+                <Text text="DOKTOR BİLGİLERİ" class="doctor-info"/>
+                <Text text="HASTA KAYITLARI" class="patient-info"/>
+            </HBox>
+            <HBox>
+                <f:Avatar src="/resources/images/76.jpg" displaySize="XL" class="avatar"></f:Avatar>
+                <VBox class="user-information">
+                    <Text text="Matthew Black" class="name"/>
+                    <Text text="0000010122"/>
+                    <Text text="Senior Payroll Specialist"/>
+                    <Text text="Payroll Administration-(US)"/>
+                </VBox>
+
+                <VBox class="user-information2">
+                    <Text text="Mail Address"/>
+                    <Text text="matthewblack@detaysoft.com" class="link"/>
+                    <Text text="Phone Number" class="phone"/>
+                    <Text text="+1-610-661 1020" class="link"/>
+                </VBox>
+
+            </HBox>
+            <HBox class="personal-information">
+                <core:Icon src="sap-icon://account" size="20px" color="#031E48" class="icon"/>
+                <Text text="Kişisel Bilgiler" />
+            </HBox>
+            <HBox class="information-box">
+                <VBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="Doktor ID :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=""></MaskInput>
+                    </HBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="Doktor Adı :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=" "></MaskInput>
+                    </HBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="Doktor Soyadı :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=""></MaskInput>
+                    </HBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="TC Kimlik  No :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=" "></MaskInput>
+                    </HBox>
+                </VBox>
+
+                <VBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="Doktor Branş Kodu :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=" "></MaskInput>
+                    </HBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="Doktor Kullanıcı Adı :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=" "></MaskInput>
+                    </HBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="Doktor Mail Bilgisi :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=" "></MaskInput>
+                    </HBox>
+                    <HBox class="information">
+                        <VBox>
+                            <Text text="Tel Bilgisi :" class="information-item"/>
+                        </VBox>
+                        <MaskInput class="input1" placeholder=" "></MaskInput>
+                    </HBox>
+                </VBox>
+
+            </HBox>
+
+            <HBox class="list-line">
+                <core:Icon src="sap-icon://notes" size="20px" color="#031E48" class="icon"/>
+                <Text text="Tesis Ve Klinik Listesi" />
+            </HBox>
+
+            <List items="{/CustomListData}">
+                <items>
+                    <CustomListItem>
+                        <HBox alignItems="Center" height="110px">
+                            <core:Icon src="sap-icon://temperature" size="20px" color="#031E48" class="icon"/>
+                            <VBox>
+                                <Text text="{userId}" class="clinic-ıd"/>
+                                <Text text="{body}"/>
+                            </VBox>
+                        </HBox>
+                    </CustomListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,540 @@
+/* .container{
+    width:100%;
+    height: 100%;
+}
+.content{
+    width:100%;
+    height:100%;
+    background-color: green;
+    
+}
+.box{
+    height:100% !important;
+    width:100% !important;
+    background-color:white !important;
+    margin:.2rem !important;
+}
+
+.smallbox1{
+    
+    height:100px !important;
+    width:100px !important;
+    background-color:red !important;
+    margin:.2rem !important;
+    margin-right:5rem;
+    
+} 
+.smallbox2{
+    
+    height:100px !important;
+    width:100px !important;
+    background-color:red !important; 
+    margin-left:120px !important;
+    
+} 
+
+.test {
+    background: rgb(255, 255, 255) !important;
+    margin-bottom: 10px;
+}
+.space{
+    margin-right:10rem !important;
+}
+
+
+
+
+/*hastakayıt*/
+
+/* .container{
+    
+    width:100% !important;
+    
+    background-color: rgb(110, 164, 219);
+
+}
+ .content{
+    margin:0 auto;
+    margin-top:2rem;
+    width:97% !important;
+    height:650px !important;
+    background-color:#FAFAFA!important;
+   
+} 
+.content-nav{
+    height: 30px !important;
+    width:100% !important;
+    background-color: #DBE5EF !important;
+}
+.nav-info{
+    color:rgb(21, 84, 117)!important;
+    font-weight: bold !important;
+}
+.avatar{
+    margin-left:1rem !important;
+    margin-top:1rem !important;
+}
+.name{
+    color:rgb(39, 73, 92)!important;
+    font-size:1.5rem !important;
+}
+
+.user-information{
+    padding-left:1rem !important;
+    padding-top:2.3rem !important;
+    
+}
+.phone{
+    margin-bottom:.2rem !important;
+    margin-top:.2rem !important;
+}
+.user-information2{
+    padding-left:1rem !important;
+    padding-top:2.5rem !important;
+    
+}
+.doctor-info{
+    font-weight: 600 !important;
+    border:2px dotted black;
+  
+}
+.patient-info{
+    color:gray !important;
+    font-weight: 600 !important;
+    padding:.2rem !important;
+}
+.link{
+    color:rgb(51, 139, 194) !important;
+}
+ 
+.personal-information{
+    margin:0 auto !important;
+    margin-top:4rem !important;
+    width:100% !important;
+    padding:.5rem !important;
+    background-color:rgb(207, 234, 248) !important;
+}
+.information-box{
+    padding-top:1rem !important;
+}
+.information{
+    padding:.2rem !important;
+    padding-top:.2rem !important;
+  
+    
+}
+.information-item{
+    width:190px !important;
+    margin-top:.5rem !important;
+
+}
+.input1{
+    width:325px !important;
+     
+}
+
+.list-line{
+    margin:0 auto !important;
+    margin-top:1rem !important;
+    width:100% !important;
+    padding:.5rem !important;
+    background-color:rgb(247, 191, 119) !important;
+}
+
+.clinic-ıd{
+    color:red !important;
+    
+}
+
+ .dotted{
+     border-radius: 1px dotted gray !important;
+     
+ } 
+
+
+
+/*ADMİNDASHBOARD*/
+
+/* .container{
+    
+    width:100%;
+    background-color: rgb(110, 64, 235);
+
+}
+
+ 
+.left-content{
+    width: 35% !important;
+    background-color: rgb(255, 255, 255) !important;
+  
+}
+
+.avatar{
+    padding:1rem !important;
+}
+.user-info{
+    padding-top:2rem !important;
+    padding-left:1rem !important;
+    padding-bottom:2rem !important;
+    
+}
+.user-name{
+    font-weight: bold !important;
+
+}
+.user-job{
+    color:rgb(170, 169, 169) !important;
+    font-size:12px !important;
+}
+.left-content-box{
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    width:100% !important;
+    padding:.5rem !important;
+}
+.box-title
+{
+    color:rgb(95, 93, 93) !important;
+    font-size:12px !important;
+    font-weight: bold !important;
+    padding-left:1rem !important;
+    width:100% !important;
+}
+
+.buton{
+    margin-left:2rem !important;
+    width:150px !important;
+    
+}
+
+.blue-logo{
+    border-radius:2px !important;
+    background-color: aqua !important;
+    width: 30px !important;
+    height:30px !important;
+    margin-right:1rem !important;
+
+}
+.right-content-title{
+    font-weight: bold !important;
+    color:gray !important;
+    margin-top:.5rem !important; 
+    
+}
+.right-content-box{
+    border-radius:2px !important;
+    background-color: aqua !important;
+    width: 250px !important;
+    height:230px !important;
+    margin:1rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+   
+    
+}
+.circle-box{
+    position: relative !important;
+
+    
+}
+.circle{
+    width: 90px !important;
+    height:90px !important;
+    border-radius: 100% !important;
+    opacity: 0.1 !important;
+    background-color:white !important;
+    position:absolute !important;
+    margin-left:150px !important;
+    animation: circle 15s linear infinite !important;
+    border-radius:100% !important;
+    margin-right: .1rem !important;
+    margin-top:2rem !important;
+  
+}
+.circle2{
+    width:60px !important;
+    height:60px !important;
+    border-radius: 100% !important;
+    opacity: 0.2 !important;
+    background-color:white !important;
+    position:absolute !important;
+    margin-left:110px !important;
+    margin-right: .1rem !important;
+    margin-top:2rem !important;
+    animation: circle 15s linear infinite;
+    
+}
+.stock-total{
+    
+    position:absolute !important;
+    float:left !important;
+    margin-left:2rem !important;
+    z-index: 1;
+    
+}
+@keyframes circle{
+     0%  {  top:0px;  bottom:100px;}
+    25%  {  top:90px; bottom:0px;}
+    50%  {  top:0px; bottom:0px;}
+    75%  {  top:0px;  bottom:0px;}
+    100% {  top:100px; bottom:0px;}
+ }
+
+@keyframes circle2{
+    0%   {  top:0px;  bottom:100px;}
+    25%  {  top:0px; bottom:0px;}
+    50%  {  top:90px; bottom:0px;}
+    75%  {  top:0px;  bottom:0px;}
+    100% {  top:100px; bottom:0px;}
+ 
+}
+
+ 
+
+.purple{
+    background-color: rgb(128, 53, 199) !important;
+    opacity: 0.7 !important;
+  
+
+}
+.blue{
+    background-color: rgb(53, 170, 199) !important;
+    opacity: 0.7 !important;
+}
+.orange{
+    background-color: rgb(211, 99, 8) !important;
+    opacity: 0.7 !important;
+}
+
+ 
+.padding{
+    
+    color:#fff !important;
+    opacity: 0.9 !important;
+}
+.padding-top{
+    padding-top:2rem !important;
+}
+
+.right-content-container{
+    margin:0 auto;
+    width:96% !important;
+    height:50% !important;
+    background-color: rgb(253, 250, 250) !important;
+    padding:1rem !important;
+
+}
+
+.list-title{
+   
+    width:155px !important;
+}
+.list-title-usertype{
+   
+    width:150px !important;
+margin-left:1rem !important;
+}
+.table-title{
+    padding-bottom:.9rem !important;
+    font-weight: bold !important;
+}
+.table{
+    width:100%;
+    padding-top:.7rem !important;
+    padding-bottom:.9rem !important;
+    border-bottom:1px dotted gray;
+}
+.status-button{
+    width:75px !important;
+    margin-right: .5rem !important;
+    margin-bottom:2rem !important;
+}
+ 
+.icon{
+ margin-left:3rem !important;
+}  */
+
+/* clockapp*/
+
+ .page{
+    background-image: url("/resources/images/backclock.png");
+    background-size: cover;
+    box-sizing: border-box !important;
+}
+
+.container{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width:90%;
+    height:90%;
+    margin: auto; 
+
+}
+
+.left-content{
+     
+    width:50%;
+    height: 100%;
+    overflow: hidden !important;
+
+    
+}
+.buton{
+  width:100px;
+}
+ 
+.like{
+    padding:.5rem;
+  
+
+  
+}
+.clockbox:hover.like{
+display: block !important;
+}
+ 
+.clockbox{
+    width:100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding:.1rem;
+    margin-top:2rem !important; 
+    
+}
+
+.icon-box{
+    background-color:rgb(243, 243, 243) !important;
+    position: fixed !important;
+    z-index: 500;
+    width:45%;
+    height: 7%;
+    padding: .6rem;
+
+}
+.sapMBtnInner{
+    background-color: red !important;
+    border:2px solid #272727 !important;
+    width:120px;
+    font-size: 12px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    color:#272727;
+    padding:-2rem !important;
+    font-weight: 500;
+}
+
+.icon{
+    padding:.2rem;
+}
+.info{
+    text-align: center !important;
+    width:200px;
+    color:gray !important;
+}
+ 
+.grid-image-style{
+    width:100%;
+    height:50%;
+}
+.grid-style{
+    background-color:white !important;
+}
+.right-content{
+    width: 50%;
+    height: 100%;
+    background-color: red !important;
+    overflow: hidden;
+ 
+}
+.scroll-style{
+    background-color: #fff !important;
+    
+}  
+
+/* movie*/
+/* 
+.content {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #272727 !important;
+}
+
+.left-content {
+    width: 15% !important;
+    background-color: #101115 !important;
+}
+
+.genre-box {
+    padding: 2rem !important;
+}
+
+.text-title {
+    color: #fff !important;
+    padding: .3rem !important;
+}
+
+.text {
+    color: rgb(190, 187, 187) !important;
+    padding: .3rem !important;
+}
+
+.center-content {
+    width: 70% !important;
+    background-color: #1a1a1a !important;
+}
+.grid-style{
+    border-bottom:0.5px solid #abacad !important;
+
+}
+.fix-content-style{
+    width:900px !important;
+    height: 500px !important;
+}
+
+ 
+
+.sapMSFF {
+    border-radius: 30px;
+    height: 30px !important;
+    width: 300px !important;
+    background-color: transparent !important;
+    border: 2px solid rgb(55, 58, 65)!important;
+    margin-left: 15px !important;
+   
+}
+.scroll{
+    background-color:red !important;
+     
+}
+.poster-title-style{
+    color:#fff !important;
+
+}
+
+.column1 {
+    color: #fff !important;
+}
+
+.right-content {
+    width: 20% !important;
+    background-color: #222127 !important;
+}
+
+.sapMShellBrandingBar {
+    background-color: #272727 !important;
+}
+.movie-size{
+    padding:2rem !important;
+    margin-top:2rem !important;
+    width:50% !important;
+    height:50% !important;
+} */

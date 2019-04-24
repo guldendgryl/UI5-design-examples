@@ -1,0 +1,12 @@
+{
+  "name": "Shell",
+  "version": "1.0.0",
+  "main": "Component-preload.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"./\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
