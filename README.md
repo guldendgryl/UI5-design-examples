@@ -4,6 +4,6 @@
 ## box
 ![box](boxss.png)
 ## admin-dashboard
-![admindashboard](admindashboardss.png)
+![admindashboard](admindashboardss.jpg)
 ## hastakayit
 ![hastakayit](hastakayitss.png)
