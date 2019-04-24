@@ -24,7 +24,7 @@ sap.ui.define(
             targetControl: 'masterAppView'
           },
           {
-            pattern: 'hastakayıt',
+            pattern: '',
             viewPath: 'SapUI5Tutorial.Application.Main.views.DocumentManagement.view',
             name: 'hastakayitView',
             view: 'hastakayit',
@@ -38,7 +38,7 @@ sap.ui.define(
             targetControl: 'masterAppView'
           },
           {
-            pattern: '',
+            pattern: 'kokpo',
             viewPath: 'SapUI5Tutorial.Application.Main.views.DocumentManagement.view',
             name: 'clockappView',
             view: 'clockapp',
