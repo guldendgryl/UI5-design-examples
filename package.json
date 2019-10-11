@@ -8,5 +8,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "font-awesome": "^4.7.0",
+    "font-awesome-openui5": "^3.1.0",
+    "ui5-fontawesome": "^1.2.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "install-peers": "^1.0.3"
+  }
 }

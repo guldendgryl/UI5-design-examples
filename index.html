@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-        <title>SapUI5 Tutorial</title>
-        <link rel="stylesheet" href="resources/css/global.css"/>
-        <script
-            id="sap-ui-bootstrap"
-            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-            data-sap-ui-theme="sap_bluecrystal"
-            data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table"
-            data-sap-ui-bindingsyntax="complex"
-            data-sap-ui-compatversion="edge"
-            data-sap-ui-resourceroots='{
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>SapUI5 Tutorial</title>
+
+    <link rel="stylesheet" href="resources/css/global.css"/>
+    <!-- <link rel="stylesheet" href="resources/css/movie.css" /> -->
+    <!-- <link rel="stylesheet" href="resources/css/book.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/hastakayit.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/admindashboard.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/clockapp.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/spotify.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/fontawesome.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/hesapmakinesi.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/shopping.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/BnetDashboard.css"/> -->
+    <!-- <link rel="stylesheet" href="resources/css/bnetActivity.css"/> -->
+    <link rel="stylesheet" href="resources/css/calendar.css" />
+    <!-- <link rel="stylesheet" href="resources/css/clock.css"/> -->
+
+    <link class="rs-file" href="/assets/vendor/font-awesome/css/all.min.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+
+    <script src="icon.js"></script>
+
+    <link data-require="font-awesome@*" data-semver="5.9.0" rel="stylesheet"
+        href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+
+    <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_belize" data-sap-ui-libs="sap.m,sap.ui.commons,sap.ui.table"
+        data-sap-ui-bindingsyntax="complex" data-sap-ui-compatversion="edge" data-sap-ui-resourceroots='{
             "SapUI5Tutorial": "./"
          }'></script>
-        <script>
-            sap.ui.getCore().attachInit(function () {
-					new sap.m.Shell({
-						app : new sap.ui.core.ComponentContainer({
-							name : "SapUI5Tutorial",
-							height : "100%"
-						})
-					}).placeAt("content");
-            });
-            var dashboardView;
-            var oModel = new sap.ui.model.json.JSONModel;
-            oModel.setSizeLimit(5000);
-            sap.ui.getCore().setModel(oModel);
-        </script>
-    </head>
-    <body class="sapUiBody sapUiSizeCompact" id="content">
-    </body>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            new sap.m.Shell({
+                app: new sap.ui.core.ComponentContainer({
+                    name: "SapUI5Tutorial",
+                    height: "100%"
+                })
+            }).placeAt("content");
+        });
+        var dashboardView;
+        var oModel = new sap.ui.model.json.JSONModel;
+        oModel.setSizeLimit(5000);
+        sap.ui.getCore().setModel(oModel);
+
+        sap.ui.core.IconPool.addIcon('register', 'customfont', 'fontAwesome', 'f0f3'); //adding new icon 
+
+    </script>
+
+</head>
+
+<body class="sapUiBody sapUiSizeCompact" id="content">
+
+
+</body>
+
 </html>

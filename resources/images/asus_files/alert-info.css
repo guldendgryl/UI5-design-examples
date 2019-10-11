@@ -1,0 +1,177 @@
+#cookie-policy-info,#cookie-policy-info .close,
+body.show-cookie-policy-info {
+    transition: all .2s ease-in-out;
+}
+
+body.show-cookie-policy-info {
+    position: relative;
+    top: 220px;
+}
+
+#cookie-policy-info {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    height: 0;
+    position: absolute;
+    top: -220px;
+    width: 100%;
+    background-color: #424242;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4em;
+    z-index: 101;
+}
+
+#cookie-policy-info p{
+    margin-bottom: 10px !important;
+}
+
+#cookie-policy-info .wrap {
+    width: 80%;
+    margin: 30px auto;
+    padding-right: 5%;
+}
+
+#cookie-policy-info .btn-ok,
+#cookie-policy-info .btn-reject {
+    width: 135px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 30px;
+    color: #0094f2;
+    border: 1px solid #0094f2; 
+    border-radius: 3px;
+    background: transparent;
+    font-size: 14px;
+    transition: 0.2s
+}
+
+#cookie-policy-info .btn-ok:hover,
+#cookie-policy-info .btn-reject:hover {
+    background: #0094f2;
+    color: white;
+}
+
+#cookie-policy-info .btn-reject{
+    margin-left: 16px;
+}
+
+#cookie-policy-info .close {
+    position: absolute;
+    top: 45px;
+    right: 10%;
+    width: 13px;
+    height: 13px;
+    display: block;
+    color: #424242;
+    font-size: 0px;
+    text-indent: -999px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjM0MkVFOThGN0U1MTFFNjlGN0JGMTFERDMyMzIyMUUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjM0MkVFOTlGN0U1MTFFNjlGN0JGMTFERDMyMzIyMUUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCMzQyRUU5NkY3RTUxMUU2OUY3QkYxMUREMzIzMjIxRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCMzQyRUU5N0Y3RTUxMUU2OUY3QkYxMUREMzIzMjIxRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkB22/wAAAB9SURBVHjanJLNDcAgCIWxB8aCDmUH7alDdINeKBpMjMWflORFDO8LigYRAQ1UPTCP7NssOVU0Adh8CKmTalfdKrJ9K7Y655M5BRoBLeSBH8CDamP0gB4EBoitsAKVTkdvOKt3oh40mx61EC++ExUIVdcAqMHkw/Dn770CDADc56tFLm8n+gAAAABJRU5ErkJggg==') center center no-repeat;
+}
+
+#cookie-policy-info .close:hover {
+    opacity: .8;
+}
+
+.show-cookie-policy-info #cookie-policy-info {
+    height: 220px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1366px) {
+  body.show-cookie-policy-info{
+    top: 240px;
+  }
+
+  #cookie-policy-info {
+    top: -240px;
+  }
+
+  .show-cookie-policy-info #cookie-policy-info {
+      height: 240px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+
+	body.show-cookie-policy-info {
+        top: 0!important;
+	}
+
+	#cookie-policy-info {
+		top: -220px;
+        z-index:10000;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        padding: 0;
+	}
+
+    #cookie-policy-info .wrap {
+        width: 80%;
+        margin: 30px 20px 30px;
+    }
+
+    #cookie-policy-info .close{
+        top: 20px;
+        right: 20px;
+    }
+
+	.show-cookie-policy-info #cookie-policy-info {
+		//height: 220px;
+        height: auto;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+	body.show-cookie-policy-info {
+
+	}
+
+	#cookie-policy-info .wrap{
+		-webkit-text-size-adjust:none;
+		width: 90%;
+		font-size: 12px;
+	}
+
+/*	body.mobile.show-cookie-policy-info {
+        top: 200px;
+	}
+
+	.mobile #cookie-policy-info {
+		top: -220px;
+	}
+
+	.mobile.show-cookie-policy-info #cookie-policy-info {
+		height: 200px;
+	}*/
+
+}
+
+@media only screen and (max-width: 800px) {
+  #cookie-policy-info .btn-ok {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+    #cookie-policy-info .btn-ok {
+        margin: 0;
+    }
+
+    #cookie-policy-info .btn-reject {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    #cookie-policy-info .btn-reject {
+        margin: 16px 0 0;
+        display: block;
+    }
+}
+
+

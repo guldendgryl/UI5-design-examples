@@ -1,0 +1,10 @@
+.body{
+    background-color:red !important;
+}
+
+.clockView{
+    position: relative;
+    margin-top:2rem;
+    border-radius: 100% !important;
+    background-color:yellow !important;
+}

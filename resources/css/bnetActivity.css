@@ -1,0 +1,70 @@
+ .header {
+     background: #3174A6 !important;
+ }
+ .calendarIconMargin{
+     margin: 5px !important;
+ }
+ .iconPadding{
+     padding:7px !important;
+ }
+
+ .calendar-day {
+     margin-left: .3rem !important;
+ }
+
+ .sapUiIcon {
+     color: rgb(85, 85, 85) !important;
+ }
+
+ .date-text {
+     color: rgb(100, 100, 100) !important;
+     font-weight: 600 !important;
+     font-size: 14px !important;
+ }
+
+ .left-icon {
+     margin: .3rem !important;
+ }
+
+ 
+ .sapMSegBBtn.sapMSegBBtnSel {
+     background-color: #007cc0 !important;
+     color: #fff !important;
+ }
+
+ .calendar-box {
+     border-radius: 5px !important;
+     box-shadow: 0px 0px 1px rgba(77, 75, 75, 0.6);
+ }
+
+ .calendar-box-top {
+     /* background-color: #bfe8fd !important; */
+    background-color: #c0e2ee !important; 
+ }
+
+ .date-num {
+     font-size: 30px !important;
+     color: #272727 !important;
+ }
+
+ .day-name {
+     font-size: 13px !important;
+     color: rgb(109, 109, 109) !important;
+ }
+
+ .activity-content {
+     border-radius: 3px !important;
+     background-color: rgb(255, 243, 175) !important;
+     padding:.3rem !important;
+ }
+
+ .activityContentTime {
+     background-color: rgb(247, 230, 84) !important;
+     border-radius: 3px;
+     margin:3px !important;
+      
+ }
+ .calendarDailyShadow{
+     margin:2px !important;
+    box-shadow: 1px 3px 10px rgba(77, 75, 75, 0.9);
+ }

@@ -1,0 +1,4 @@
+.btn-group > .btn-asus:first-child, .btn-group > .btn-asus:last-child, .btn-group > .btn-asu{
+ 	padding: 8px 0;
+  width:100%;
+}

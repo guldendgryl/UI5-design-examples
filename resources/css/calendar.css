@@ -1,0 +1,149 @@
+.header {
+  background: #3174A6 !important;
+}
+
+.calendarIconMargin {
+  margin: 5px !important;
+}
+
+.text-center {
+  min-width: 125px;
+}
+
+.dateTitle {
+  margin-top: -5px;
+}
+
+.ınputWidth {
+  min-width: 100px;
+}
+
+.iconPadding {
+  padding: 7px !important;
+}
+
+.sapUiIcon {
+  color: rgb(85, 85, 85) !important;
+}
+
+.left-icon {
+  margin: .3rem !important;
+}
+
+.fa {
+  font-size: 100 !important;
+  color: #6e6e6e !important;
+}
+
+.month {
+  font-size: 15px;
+  color: #6e6e6e !important;
+  font-weight: initial !important;
+}
+
+.years {
+  font-size: 15px;
+  color: #6e6e6e !important;
+  font-weight: initial !important;
+}
+
+a:-webkit-any-link {
+  text-decoration: none !important;
+}
+
+table {
+  width: 100%;
+  border-spacing: 9px;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: end;
+  font-size: 1em;
+  color: rgb(119, 119, 119);
+  /* box-shadow: 0 5px 15px rgba(226, 226, 226, 0.3); */
+  border: .5px solid rgb(219, 219, 219);
+  border-radius: 5px;
+}
+
+.visibleFalse {
+  background-color: rgb(236, 236, 236);
+  opacity: 0.5;
+}
+
+.day {
+  height: 150px;
+  min-width: 150px;
+  width: 150px;
+  color: black !important;
+  max-width: 150px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.daytop {
+  background-color: rgb(214, 233, 250);
+  padding-top: 5px;
+}
+
+.numberText {
+  font-size: 30px !important;
+  color: #272727 !important;
+  margin: 0 !important;
+}
+
+.daybottom {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  margin: 10px;
+  text-align: left;
+}
+
+.red {
+  color: rgb(204, 11, 11) !important;
+}
+
+.blue {
+  color: rgb(65, 125, 236) !important;
+}
+
+.green {
+  color: rgb(8, 124, 24) !important;
+}
+
+.VisibleFalse {
+  visibility: hidden !important;
+}
+
+.VisibleTrue {
+  visibility: visible !important;
+}
+
+.fa.fa-circle.red {
+  color: rgb(177, 20, 20) !important;
+}
+
+.fa.fa-circle.blue {
+  color: #1579bb !important;
+}
+
+.fa.fa-circle.green {
+  color: rgb(27, 110, 27) !important;
+}
+.todayColor{
+  background-color:#78b0d6;
+}
+.standardList{
+ 
+}
+.icon{
+  font-family: "Font Awesome"; font-weight: 900; content: "\f007" !important;
+  color:red !important;
+}

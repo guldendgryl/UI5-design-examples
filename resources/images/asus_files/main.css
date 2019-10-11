@@ -1,0 +1,6049 @@
+@charset "UTF-8";
+/** ___  Setting  __________________________________________________
+ * 
+ *    此檔案為網站設定檔，包含基本字體、顏色、尺寸
+ * ___________________________________________________________ */
+/** ___  style-effects  ____________________________________________
+ * 
+ *    此為已定義完成的樣式，同一網站請從這取用樣式
+ *    還沒拆開base.css前都是限制區域
+ * ___________________________________________________________ */
+@import url("//fonts.googleapis.com/css?family=Roboto:100, 300, 400, 500, 700");
+#af-header,
+#asus-api-footer {
+  /* ------ 陰影 ------ */
+  /*參數：x軸、y軸、柔化、(距離)、顏色*/
+  /* ------ 圓角 ------ */
+  /* ------ 透明 ------ */
+  /* ------ 漸變 ------ */
+  /* ------ 小三角形 ------ */
+  /* ------ 不換行 ------ */
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+}
+
+/*react loading icon*/
+#loading{
+  text-align: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+
+#loading #load{
+  width: 40px;
+  bottom: -10px;
+  position: relative;
+  animation: rotateCircle 1.5s linear infinite;
+}
+
+#loading #load .loading-inner{
+  stroke-dashoffset: 0;
+  stroke-dasharray: 300;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke: #0094f2;
+  fill: transparent;
+  animation: circleanimate 1.5s linear infinite;
+}
+
+@keyframes circleanimate{
+  0%   { stroke-dashoffset: 0;}
+  100% {stroke-dashoffset: -600;}
+}
+
+@keyframes rotateCircle{
+  0%     { transform: rotate(0deg); }
+  100%   { transform: rotate(360deg); }
+}
+  
+/*react loading icon end*/
+#af-header .clearfix:after,
+#asus-api-footer .clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+#af-header .show,
+#asus-api-footer .show {
+  display: block !important;
+}
+
+#af-header .hide,
+#asus-api-footer .hide {
+  display: none !important;
+}
+
+#af-header .paused,
+#asus-api-footer .paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+#af-header .poa,
+#asus-api-footer .poa {
+  position: absolute;
+}
+
+#af-header .por,
+#asus-api-footer .por {
+  position: relative;
+}
+
+#af-header .trs,
+#asus-api-footer .trs {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#af-header .nowrap,
+#asus-api-footer .nowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ------ 不換行 ------ */
+/* 初始樣式，用來補 li ol 噴掉 */
+.normal-style ul {
+  list-style: initial;
+}
+
+.normal-style ol {
+  list-style: decimal;
+}
+
+/* 基本藍 */
+.af_c-blue-1,
+.af_c-blue-1:link {
+  background: #00A8FF;
+}
+
+/* 基本按鈕設定 */
+.af_btn-base,
+.af_btn-base:link,
+.af_btn-base:visited {
+  padding: 10px 30px;
+  font-size: 14px;
+  color: #fff;
+  background: #00a8ff;
+}
+
+.af_btn-base:hover {
+  background: #0097e6;
+}
+
+/** ___  breakpoint 中斷點規則放這  ____________________________________________
+ * 
+ *    此為已定義完成的樣式，同一網站請從這取用樣式
+ * ___________________________________________________________ */
+/*		
+					s-mob  m-mob   mob  tablet  desktop
+			<____320____480____720____800____1170____>
+
+				 _________________________900_1020____
+					額外斷點								bp2  bp1
+*/
+/* mobile pre char  */
+/** ___  Default Reset  ____________________________________________
+ * 
+ *    此為一般頁面初始值設定
+ * ___________________________________________________________ */
+/* ------ 字型 ------ */
+body, input, a {
+  font-family: "Segoe UI", "微軟正黑體", "Microsoft JhengHei", "Arial", "新細明體";
+}
+
+a:link {
+  color: #00a8ff;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0070bf;
+}
+
+strong {
+  font-weight: bold;
+}
+
+#af-header ul, #af-header li,
+#asus-api-footer ul,
+#asus-api-footer li {
+  list-style: none;
+}
+
+/** ___ Layout ____________________________________________________
+ * 
+ *    此為存放公用樣板用
+ *
+ * ___________________________________________________________ */
+/* -------------- af-container 整體包覆 ------------- */
+#af-container {
+  width: 100%;
+}
+
+.af-inner {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1170px) {
+  .af-inner {
+    width: 100%;
+  }
+}
+
+/* -------------- Grid ------------- */
+/*
+	預設為16格
+  切四尺寸
+  ___ 320 ____ 720  ....  800 ____ 1280 ____
+      s-xs       s-s          s-m        s-l
+
+*/
+/* 一般電腦螢幕 */
+.grids .grid {
+  box-sizing: border-box;
+}
+
+/* AB 改良版 
+	ABCDE 是群組念
+	A7 → 1 x 7 
+*/
+.l__grid-1 > .grid {
+  width: 100%;
+}
+
+.l__grid-1x2 > .grid {
+  width: 50%;
+  float: left;
+}
+
+.l__grid-1x3 > .grid {
+  width: 33.33333%;
+  float: left;
+}
+
+.l__grid-1x3 > .grid:first-child {
+  border-left: 0px !important;
+}
+
+.l__grid-1x3 > .grid:last-child {
+  border-right: 0px !important;
+}
+
+.l__grid-1x5 > .grid {
+  width: 20%;
+  float: left;
+}
+
+.l__grid-1x5 > .grid:first-child {
+  border-left: 0px !important;
+}
+
+.l__grid-1x5 > .grid:last-child {
+  border-right: 0px !important;
+}
+
+.l__grid-2x1-3x1 > .grid {
+  width: 20%;
+  float: left;
+}
+
+.l__grid-2x1-3x1 > .grid:first-child {
+  border-left: 0px !important;
+}
+
+.l__grid-2x1-3x1 > .grid:last-child {
+  border-right: 0px !important;
+}
+
+.l__grid-1x4 > .grid {
+  width: 25%;
+}
+
+.l__grid-1x4 > .grid {
+  float: left;
+}
+
+#af-container .l__auto-width > img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1180px) {
+  #af-container .l__auto-width > img {
+    width: 100%;
+  }
+  body #af-container .l__auto-height {
+    height: auto;
+  }
+  body #af-container .iframe.l__auto-width > iframe {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  /* 平板 */
+  .m__grid-1 > .grid {
+    width: 100%;
+  }
+  .m__grid-1x2 > .grid {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1169px) {
+  body #af-container .m__auto-height {
+    height: auto;
+    min-height: auto;
+  }
+  body #af-container .m__auto-width > img {
+    width: 100%;
+  }
+  body #af-container .iframe.m__auto-width > iframe {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  /* 手機 */
+  .s__grid-1 > .grid {
+    width: 100%;
+  }
+  .s__grid-1x2 > .grid {
+    width: 50%;
+    float: left;
+  }
+  #af-container .s__auto-height {
+    height: auto;
+    min-height: auto;
+  }
+  #af-container .s__auto-width > img {
+    width: 100%;
+  }
+}
+
+/** ___  Icons  ____________________________________________
+ * 
+ *    Icon統一放這
+ * ___________________________________________________________ */
+.icon-cart, .icon-profile, .icon-msg, .icon-search, .icon-list {
+  padding-left: 25px;
+  padding-bottom: 25px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.aai-bg-black .sub-area .icon.icon-cart {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart-w.png");
+}
+
+.aai-bg-black .sub-area .icon.icon-profile {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member-w.png");
+}
+
+.aai-bg-black .sub-area .icon.icon-msg {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg-w.png");
+}
+
+.aai-bg-black .sub-area .icon.icon-list {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list-w.png");
+}
+
+.aai-bg-black .sub-area .icon.icon-search {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search.png");
+}
+
+.aai-bg-black .mobile-action .icon.icon-search {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search-w.png");
+}
+
+@media only screen and (max-width: 720px) {
+  .sub-area .icon.icon-cart {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart-w.png");
+  }
+  .sub-area .icon.icon-profile {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member-w.png");
+  }
+  .sub-area .icon.icon-msg {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg-w.png");
+  }
+  .sub-area .icon.icon-list {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list-w.png");
+  }
+}
+
+@media only screen and (max-width: 1169px) {
+  .aai-bg-black .sub-area .icon.icon-search {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search-w.png");
+  }
+}
+
+.icon.icon-cart {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart.png");
+}
+
+.icon.icon-profile {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member.png");
+}
+
+.icon.icon-msg {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg.png");
+}
+
+.icon.icon-list {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list.png");
+}
+
+.icon.icon-search {
+  background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search.png");
+}
+
+.icon-css-menu,
+.icon-css-menu:after,
+.icon-css-menu:before {
+  background: #494949;
+  content: "";
+  cursor: pointer;
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transition: all 500ms ease-in-out 0s;
+  width: 20px;
+}
+
+.icon-css-menu {
+  transform: translate3d(-50%, -4px, 0px);
+  -webkit-transform: translate3d(-50%, -4px, 0px);
+}
+
+.icon-css-menu:before {
+  transform: translate3d(-50%, -8px, 0px);
+  -webkit-transform: translate3d(-50%, -8px, 0px);
+}
+
+.icon-css-menu:after {
+  transform: translate3d(-50%, 5px, 0px);
+  -webkit-transform: translate3d(-50%, 5px, 0px);
+}
+
+body.show-menu #af-header .af-inner .mobile-menu-toggle .icon-css-menu {
+  background: transparent;
+}
+
+body.show-menu #af-header .af-inner .mobile-menu-toggle .icon-css-menu:before {
+  top: 0;
+  transform: translateX(-50%) rotate(45deg);
+  -webkit-transform: translateX(-50%) rotate(45deg);
+}
+
+body.show-menu #af-header .af-inner .mobile-menu-toggle .icon-css-menu:after {
+  top: 10px;
+  transform: translateX(-50%) translateY(-10px) rotate(-45deg);
+  -webkit-transform: translateX(-50%) translateY(-10px) rotate(-45deg);
+}
+
+body.show-menu #af-header .aai-bg-black .icon-css-menu {
+  background: transparent;
+}
+
+/* Retina icon */
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .icon {
+    -webkit-background-size: 78%;
+    -o-background-size: 78%;
+    background-size: 78%;
+  }
+  .icon.icon-cart {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart.png") \9;
+  }
+  .icon.icon-profile {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member.png") \9;
+  }
+  .icon.icon-msg {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg.png") \9;
+  }
+  .icon.icon-list {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list.png") \9;
+  }
+  .icon.icon-search {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search.png") \9;
+  }
+  .aai-bg-black .sub-area .icon.icon-cart {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart-w.png") \9;
+  }
+  .aai-bg-black .sub-area .icon.icon-profile {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member-w.png") \9;
+  }
+  .aai-bg-black .sub-area .icon.icon-msg {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg-w.png") \9;
+  }
+  .aai-bg-black .sub-area .icon.icon-list {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list-w.png") \9;
+  }
+  .aai-bg-black .sub-area .icon.icon-search {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search.png") \9;
+  }
+  .aai-bg-black .mobile-action .icon.icon-search {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search-w.png") \9;
+  }
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 720px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 720px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 720px), only screen and (min-device-pixel-ratio: 2) and (max-width: 720px) {
+  .sub-area .icon.icon-cart {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-cart-w.png") \9;
+  }
+  .sub-area .icon.icon-profile {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-member-w.png") \9;
+  }
+  .sub-area .icon.icon-msg {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-msg-w.png") \9;
+  }
+  .sub-area .icon.icon-list {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-list-w.png") \9;
+  }
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 800px) and (max-width: 1169px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 800px) and (max-width: 1169px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 800px) and (max-width: 1169px), only screen and (min-device-pixel-ratio: 2) and (min-width: 800px) and (max-width: 1169px) {
+  .aai-bg-black .sub-area .icon.icon-search {
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search-w_2x.png");
+    background-image: url("//www.asus.com/media/img/2015/images/icons/icon-search-w.png") \9;
+  }
+}
+
+/* -------------- Header 頁首區塊 ------------- */
+body.landingPage #af-header {
+  position: absolute;
+}
+
+#af-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  min-height: 60px;
+  min-width: 780px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAAnNCSVQICFXsRgQAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTEvMjUvMTVQb4rWAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAAAtJREFUCB1j+H8GAALNAcw5FFZcAAAAAElFTkSuQmCC") \9;
+  z-index: 10001;
+}
+
+#af-header:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  bottom: -3px;
+  width: 100%;
+  z-index: -1;
+  background: url("//www.asus.com/media/img/2015/images/top-bar-shadow.png") 0 0 repeat-x;
+}
+
+#af-header .mobile-action {
+  display: none;
+}
+
+#af-header .mobile-menu-toggle {
+  display: none;
+}
+
+#af-header #ifrmMiniCart {
+  height: 480px;
+  width: 100%;
+}
+
+#af-header .af-inner {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* overwrite font-awesome old version class */
+}
+
+#af-header .af-inner .icon:before {
+  content: "";
+}
+
+#af-header .af-inner .nav-bar:after {
+  content: "";
+  clear: both;
+  display: block;
+  width: 100%;
+}
+
+#af-header .af-inner .main-area {
+  float: left;
+}
+
+#af-header .af-inner .sub-area {
+  float: right;
+  min-width: 200px;
+}
+
+#af-header .af-inner .nav-main {
+  position: relative;
+}
+
+#af-header .af-inner .nav-main li {
+  float: left;
+  display: table;
+  height: 60px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .af-inner .nav-main li:first-child {
+  margin-left: 60px;
+}
+
+#af-header .af-inner .nav-main li + li {
+  margin-left: 60px;
+}
+
+#af-header .af-inner .nav-main li a {
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 1.2;
+  color: #2C2C2C;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: "Segoe UI", "微軟正黑體", "Microsoft JhengHei", "Arial", "新細明體";
+}
+
+#af-header .af-inner .nav-main li.nav-Rog a {
+  background: url(//www.asus.com/media/img/2017/images/rognav.png ) no-repeat center;
+  width: 98px;
+  text-indent: -999px;
+}
+
+#af-header.aai-bg-black .af-inner .nav-main li.nav-Rog a {
+  background: url(//www.asus.com/media/img/2017/images/rognav_white.png ) no-repeat center;
+}
+
+#af-header .af-inner .nav-main .magic-line {
+  display: block;
+  position: absolute;
+  width: 0px;
+  bottom: 0;
+  height: 3px;
+  background-color: #000;
+  opacity: 0;
+}
+
+#af-header .af-inner .nav-main:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+#af-header .af-inner .nav-member {
+  float: right;
+  margin-right: -7px;
+}
+
+#af-header .af-inner .icon-search {
+  position: relative;
+  background: url(//www.asus.com/media/img/2017/images/n-icon-search.svg ) no-repeat center;
+  height: 60px;
+  display: inline-block;
+  margin-right: 8px;
+  float: right;
+  padding-bottom: 0;
+  cursor: pointer;
+}
+
+#af-header.aai-bg-black .af-inner #searchopen.icon-search{
+  background: url(//www.asus.com/media/img/2017/images/n-icon-search-white.svg) no-repeat center;
+}
+
+#af-header .af-inner .icon-search.active {
+  background: url(//www.asus.com/media/img/2017/images/n-icon-search-active.svg) no-repeat center;
+}
+
+#af-header .af-inner .nav-member .member-item {
+  float: left;
+  position: relative;
+  margin-right: 5px;
+}
+
+#af-header .af-inner .nav-member .sub-block {
+  display: none;
+  position: absolute;
+  padding: 26px;
+  width: 270px;
+  left: -123px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #FFF;
+  text-align: center;
+  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#af-header .af-inner .nav-member .member-info .sub-block .user-img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#af-header .af-inner .nav-member .member-info .sub-block .user-img img {
+  width: 100%;
+  height: auto;
+}
+
+#af-header .af-inner .nav-member .member-info .sub-block .user-name {
+  margin: 10px 0;
+  color: #4e4e4e;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+#af-header .af-inner .nav-member .member-info .sub-block .member-center-btn {
+  margin: 15px 0 20px;
+  background: #00a8ff;
+  color: #FFF;
+  padding: 10px 30px;
+  display: inline-block;
+}
+
+#af-header .af-inner .nav-member .member-info .sub-block .member-center-btn:hover {
+  background: #0070bf;
+}
+
+#af-header .af-inner .nav-member .member-info .sub-block .logout {
+  display: block;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block {
+  padding: 12px 0 0;
+  text-align: left;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .top-title {
+  font-size: 14px;
+  margin: 0;
+  padding: 0px 10px;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-list:after {
+  content: "";
+  clear: both;
+  display: block;
+  width: 100%;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .list-item {
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  padding: 17px 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .af-msg-center-footer {
+  background-color: #eeeeee;
+  padding: 8px 0 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-unit {
+  position: relative;
+  padding-left: 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-name {
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-photo {
+  position: absolute;
+  left: 0px;
+  height: 50px;
+  margin-right: 10px;
+  width: 50px;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-photo img {
+  width: 100%;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-info {
+  position: relative;
+  padding: 0 20px 4px 0;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-info .datetime {
+  display: block;
+  text-align: left;
+  color: #9f9f9f;
+  font-size: 12px;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-info .post-num {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #00a8ff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+
+#af-header .af-inner .nav-member .msg-center .sub-block .sender-msg {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block {
+  left: -184px;
+  width: 393px;
+  text-align: left;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-wrap {
+  padding: 30px 26px 0px;
+  min-height: 400px;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item {
+  border-bottom: 1px solid #DEDEDE;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 20px 0;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item .product-info {
+  position: relative;
+  padding: 0px 80px;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item .product-info .cover-img {
+  position: absolute;
+  top: 0;
+  left: 5PX;
+  width: 64px;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item .product-info .cover-img img {
+  width: 100%;
+  height: auto;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item .product-info .title {
+  color: #000;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item .product-info .spec-wrap {
+  color: #585858;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item .product-info .spec-wrap .note {
+  display: inline-block;
+  padding-right: 1em;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .cart-list .item .product-info .price {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .discount {
+  font-size: 14px;
+  color: #FF0101;
+  width: 100%;
+  clear: both;
+  margin: 10px 0;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .discount .price {
+  float: right;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .subtotal {
+  font-size: 16px;
+  margin: 10px 0 15px;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .subtotal .price {
+  font-weight: 600;
+  float: right;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .subtotal + .btn {
+  margin: 10px 0 30px;
+  float: right;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .af-cart-footer {
+  clear: both;
+  background-color: #eeeeee;
+  padding: 10px 0 12px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#af-header .af-inner .nav-member .shopcart .sub-block .af-cart-footer strong {
+  font-weight: 600;
+}
+
+#af-header .af-inner .nav-member .products-compare .sub-block {
+  left: -260px;
+  height: 437px;
+  width: 520px;
+}
+
+#af-header .af-inner .nav-member .member-item:first-child > a {
+  overflow: hidden;
+  text-indent: -300px;
+  font-family: "Segoe UI", "微軟正黑體", "Microsoft JhengHei", "Arial", "新細明體";
+}
+
+#af-header .af-inner .nav-member .member-item > a {
+  height: 60px;
+  width: 30px;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#af-header .af-inner .nav-member .member-item > a .icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -13px;
+}
+
+#af-header .af-inner .nav-member .member-item > a .count {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  background: #00a8ff;
+  padding: 0 5px;
+  color: #FFF;
+  z-index: 2;
+  font-size: 10.998px;
+  line-height: 16px;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border-radius: 7px;
+  text-align: center;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+#af-header .af-inner .nav-member .member-item.open:before, #af-header .af-inner .nav-member .member-item.open:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  margin-left: 1px;
+  z-index: 1;
+}
+
+#af-header .af-inner .nav-member .member-item.open:before {
+  border-bottom: 10px solid #7b7b7b;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  content: "";
+  display: block;
+  margin-left: 1px;
+  position: absolute;
+  bottom: 0px;
+}
+
+#af-header .af-inner .nav-member .member-item.open > .sub-block {
+  display: block;
+}
+
+#af-header .af-inner .nav-member .member-item.not-login {
+  padding-right: 5px;
+  text-align: right;
+}
+
+#af-header .af-inner .nav-member .member-item.not-login:before, #af-header .af-inner .nav-member .member-item.not-login:after {
+  content: none;
+}
+
+#af-header .af-inner .nav-member .member-item.not-login > a {
+  color: #000;
+  text-indent: 0;
+  width: auto;
+  text-align: right;
+  line-height: 60px;
+}
+
+#af-header .af-inner .nav-member .member-item.not-login i {
+  display: none;
+}
+
+#af-header .af-inner .nav-member .member-item.not-login.open > .sub-block {
+  display: none;
+}
+
+#af-header .af-inner .nav-member .member-item.no-value:before, #af-header .af-inner .nav-member .member-item.no-value:after {
+  content: none;
+}
+
+#af-header .af-inner .search-bar {
+  padding: 0;
+  max-height: 0;
+  height: auto;
+  float: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 60px;
+  overflow: hidden;
+  background: white;
+  margin-top: 0;
+  text-align: center;
+  box-shadow: 0 3px 2px #e6e6e6;
+  transition: .3s;
+  transition-timing-function: cubic-bezier(1, 1, 0.25, 1);
+}
+
+#af-header .af-inner .search-bar.show{
+  max-height: 110px;
+  overflow: visible;
+}
+
+#af-header .af-inner .search-bar.show:after {
+  display: block;
+}
+
+#af-header .af-inner .search-bar:after{
+  display: none;
+  position: absolute;
+  content: '';
+  height: calc(100vh - 60px);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  top: 100%;
+  left: 0;
+}
+
+#af-header .af-inner .search-bar > .input-search {
+  opacity: 0;
+  width: 1170px;
+  margin: 20px auto 40px;
+  height: 50px;
+  padding: 2px 50px;
+  border: 1px solid #CDCDCD;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .af-inner .search-bar .btn {
+  position: absolute;
+  left: calc((100% - 1170px) / 2 + 22px);
+  top: 37px;
+  width: 25px;
+  height: 22px;
+  background: none;
+  border: 0px;
+  padding: 0;
+  cursor: default;
+  outline: none;
+}
+
+#af-header .af-inner .search-bar .btn:active{
+  box-shadow: 0 0 0 white;
+}
+
+#af-header .af-inner .search-bar .btn.btn-search-submit .icon-search {
+  cursor: default;
+}
+
+#af-header .af-inner .search-bar .btn-search-submit{
+  opacity: 0;
+}
+
+#af-header .af-inner .search-bar .btn .icon {
+  top: 0px;
+  background-position: 0 -3px;
+  float: left;
+}
+
+#af-header .af-inner .search-bar .icon.icon-close{
+  opacity: 0;
+  position: absolute;
+  right: calc((100% - 1170px) / 2 + 12px);
+  top: 37px;
+  width: 25px;
+  height: 22px;
+  border: 0px;
+  padding: 0;
+  cursor: pointer;
+  background: url(//www.asus.com/media/img/2017/images/icons/icon-searchclose.png) no-repeat;
+}
+
+#af-header .af-inner .search-bar.show #top-search-bar,
+#af-header .af-inner .search-bar.show .icon.icon-close,
+#af-header .af-inner .search-bar.show .btn-search-submit {
+  animation-duration: .2s;
+  animation-delay: .3s;
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#af-header .af-inner .search-bar > .search-result {
+  position: absolute;
+  right: 0;
+  padding: 0.1px 0;
+  top: 70px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 3px 2px #e6e6e6;
+  z-index: 1;
+  height: auto;
+  max-height: 0;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(1, 1, 0.25, 1);
+}
+
+#af-header .af-inner .search-bar>.search-result.show{
+  max-height: 2000px;
+}
+
+#af-header .af-inner .search-bar>.search-result.show p,
+#af-header .af-inner .search-bar>.search-result.show span{
+  opacity: 0;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); 
+  animation-duration: .5s ;
+  animation-delay: .5s;
+  animation-name: menuFadeIn;
+  animation-fill-mode: both;
+}
+
+@keyframes menuFadeIn{
+  0%{
+    transform: translate(0, 10px);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0, 0px);
+    opacity: 1;
+  }
+}
+
+#af-header .af-inner .logo {
+  float: left;
+  display: block;
+  width: 107px;
+  height: 23px;
+  margin-top: 18px;
+  padding: 0;
+  background: url("//www.asus.com/media/img/2017/images/n-logo-asus.svg") 0 0 no-repeat;
+}
+
+#af-header.aai-bg-black {
+  background: #636363;
+  background: rgba(34, 34, 34, 0.7);
+}
+
+#af-header.aai-bg-black .af-inner .nav-main li a {
+  color: #FFF;
+}
+
+#af-header.aai-bg-black .af-inner .nav-main .magic-line {
+  background: #fff;
+}
+
+#af-header.aai-bg-black .af-inner .logo {
+  background: url("//www.asus.com/media/img/2017/images/n-logo-asus-white.svg") 0 center no-repeat;
+  background-image: none \9;
+  background-size: 100%;
+}
+
+#af-header.aai-bg-black .af-inner .mobile-menu-toggle .icon-css-menu, #af-header.aai-bg-black .af-inner .mobile-menu-toggle .icon-css-menu:after, #af-header.aai-bg-black .af-inner .mobile-menu-toggle .icon-css-menu:before {
+  background-color: #fff;
+}
+
+#af-header.aai-bg-black .af-inner .nav-member .member-item.not-login > a {
+  color: #fff;
+}
+
+/* 子選單 */
+#af-header .nav-bar .submenu-area {
+  position: absolute;
+  top: 61px;
+  max-width: 900px;
+  max-height: 630px;
+  /* Product menu */
+  /* What s Hot menu */
+  /*
+		Commercial、Store通用選單樣式(三層)
+	 */
+  /* Commercial menu */
+  /* Service menu */
+  /* Store menu */
+}
+
+#af-header .nav-bar .submenu-area a {
+  text-decoration: none;
+}
+
+#af-header .nav-bar .submenu-area .submenu {
+  display: none;
+  position: absolute;
+  max-height: 630px;
+  background: #FFF;
+  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#af-header .nav-bar .submenu-area .submenu > .title {
+  display: none;
+}
+
+#af-header .nav-bar .submenu-area .submenu > .nav {
+  position: relative;
+  left: 0;
+  width: 270px;
+  padding: 22px 0;
+  box-sizing: border-box;
+  background: #FFF;
+}
+
+#af-header .nav-bar .submenu-area .submenu > .nav > li {
+  position: relative;
+}
+
+#af-header .nav-bar .submenu-area .submenu > .nav > li:hover > a,
+#af-header .nav-bar .submenu-area .submenu > .nav > li:focus > a,
+#af-header .nav-bar .submenu-area .submenu > .nav > li.active > a {
+  background: #565656;
+  color: #fff;
+}
+
+#af-header .nav-bar .submenu-area .submenu > .nav > li > a {
+  display: block;
+  color: #2B2B2B;
+  line-height: 1.5em;
+  padding: 8px 37px;
+  color: #2B2B2B;
+  font-size: 14px;
+}
+
+#af-header .nav-bar .submenu-area .submenu > .display-area {
+  display: none;
+}
+
+#af-header .nav-bar .submenu-area .submenu.show-sub-items .nav {
+  display: block;
+  position: absolute;
+}
+
+#af-header .nav-bar .submenu-area .submenu.show-sub-items .display-area {
+  display: none;
+  width: 100%;
+  padding-left: 270px;
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .submenu.show-sub-items .display-area .sub-item {
+  display: none;
+}
+
+#af-header .nav-bar .submenu-area .submenu.show-sub-items .display-area .sub-item .sub-group .sub-cat-title a {
+  position: relative;
+}
+
+#af-header .nav-bar .submenu-area .submenu.show-sub-items .display-area .sub-item .sub-group .sub-cat-title a:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  left: -30px;
+}
+
+#af-header .nav-bar .submenu-area .submenu.show-sub-items .display-area .sub-item .sub-group .sub-cat-title a:hover {
+  color: #00a8ff;
+}
+
+#af-header .nav-bar .submenu-area .products-menu.show-sub-items:after {
+  content: "";
+  position: absolute;
+  left: 270px;
+  top: 3%;
+  height: 94%;
+  width: 1px;
+  background: #e1e1e1;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area {
+  min-height: 630px;
+  max-height: 630px;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list {
+  min-height: 525px;
+  width: 100%;
+  height: 100%;
+  padding: 22px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list:after {
+  content: "";
+  position: absolute;
+  left: 585px;
+  top: 3%;
+  height: 94%;
+  width: 1px;
+  background: #e1e1e1;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-item {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding-right: 315px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-item .origin-title {
+  display: none;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-item.two-column {
+  padding-right: 0;
+  min-width: 629px;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-item.two-column .highlight {
+  position: relative;
+  float: left;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-item.two-column:after {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-group {
+  width: 314px;
+  padding: 5px 35px;
+  margin-bottom: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-group.empty {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-group .sub-cat-title {
+  font-size: 14px;
+  color: #2b2b2b;
+  line-height: 1.5;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-group .sub-cat-title a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-group > ul > li {
+  margin: 6px 0;
+  line-height: 15px;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-group > ul > li a {
+  font-size: 13px;
+  color: #8C8C8C;
+  text-decoration: none;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .sub-group > ul > li a:hover {
+  color: #00a8ff;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .highlight {
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 315px;
+  text-align: center;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .highlight .cover-img {
+  padding: 20px 20px 0;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .highlight .cover-img img {
+  width: 100%;
+  height: auto;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .highlight .title {
+  padding: 10px 35px;
+  margin-top: 20px;
+  font-size: 22px;
+  color: #333;
+  line-height: 1.2;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .highlight .summary {
+  padding: 10px 35px;
+  font-size: 14px;
+  color: #575757;
+  line-height: 1.3;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .highlight .btn-more {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .display-area .sub-products-list .right-column {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 315px;
+  padding: 22px 0px;
+  max-height: 524px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .products-menu > .nan {
+  min-height: 525px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu {
+  width: 466px;
+  padding: 43px 0 42px;
+  max-height: 508px;
+  background: #FFF;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* see all button */
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .more-btn {
+  position: absolute;
+  right: 45px;
+  padding-right: 15px;
+  background: url("//www.asus.com/media/img/2015/images/icons/more-btn-blue.png") right 50% no-repeat;
+  top: 1em;
+  font-size: 14px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu.two-column, #af-header .nav-bar .submenu-area .hot-menu.three-column {
+  width: 715px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu.two-column:after, #af-header .nav-bar .submenu-area .hot-menu.three-column:after {
+  content: "";
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu.two-column:before, #af-header .nav-bar .submenu-area .hot-menu.three-column:before {
+  content: "";
+  position: absolute;
+  left: 451px;
+  top: 40px;
+  height: 420px;
+  width: 1px;
+  background: #e1e1e1;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu.two-column .hot-list, #af-header .nav-bar .submenu-area .hot-menu.three-column .hot-list {
+  float: left;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu.two-column .hot-list + .hot-list, #af-header .nav-bar .submenu-area .hot-menu.three-column .hot-list + .hot-list {
+  padding: 0;
+  width: 233px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu.three-column {
+  width: 935px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu.three-column:before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  height: 420px;
+  width: 1px;
+  background: #e1e1e1;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list {
+  padding: 0px 30px;
+  width: 467px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item {
+  position: relative;
+  float: left;
+  margin: 0px 11.5px 16px 11.5px;
+  width: 180px;
+  margin-bottom: 16px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first {
+  width: 382px;
+  margin-right: 80px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first > a .title {
+  color: #404040;
+  font-size: 16px;
+  height: 40px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first > a img {
+  width: 100%;
+  height: auto;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first > a:after {
+  height: 226px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a {
+  display: block;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a img {
+  position: relative;
+  margin-bottom: 4px;
+  width: 180px;
+  height: 107px;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a .title {
+  transition: all 0.2s ease-in-out;
+  display: block;
+  height: 16px;
+  overflow: hidden;
+  line-height: 1.4em;
+  font-size: 12px;
+  color: #545454;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a:after {
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 106px;
+  background: rgba(255, 255, 255, 0);
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a:hover .title {
+  color: #00a8ff;
+}
+
+#af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a:hover:after {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-commercial-list,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-commercial-list {
+  padding: 22px 0;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-commercial-list .sub-item,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-commercial-list .sub-item {
+  display: none;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-commercial-list .sub-item .origin-title,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-commercial-list .sub-item .origin-title {
+  display: none;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group {
+  width: 314px;
+  padding: 5px 35px;
+  margin-bottom: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group.empty,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group.empty {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group .sub-cat-title,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group .sub-cat-title {
+  font-size: 14px;
+  color: #2b2b2b;
+  line-height: 1.5;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group .sub-cat-title a,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group .sub-cat-title a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul > li,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul > li {
+  margin: 6px 0;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul > li a,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul > li a {
+  font-size: 13px;
+  color: #8C8C8C;
+  text-decoration: none;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul > li a:hover,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul > li a:hover {
+  color: #00a8ff;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item > ul,
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item > ul,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul {
+  padding: 5px 42px;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item > ul > li,
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul > li,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item > ul > li,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul > li {
+  margin: 5px 0 5px;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item > ul > li:first-child,
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul > li:first-child,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item > ul > li:first-child,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul > li:first-child {
+  margin-top: 0;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item > ul > li a,
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul > li a,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item > ul > li a,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul > li a {
+  font-size: 13px;
+  color: #8C8C8C;
+  text-decoration: none;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item > ul > li a:hover,
+#af-header .nav-bar .submenu-area .store-menu > .display-area .sub-item .sub-group > ul > li a:hover,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item > ul > li a:hover,
+#af-header .nav-bar .submenu-area .commercial-menu > .display-area .sub-item .sub-group > ul > li a:hover {
+  color: #00a8ff;
+}
+
+#af-header .nav-bar .submenu-area .store-menu.show-sub-items,
+#af-header .nav-bar .submenu-area .commercial-menu.show-sub-items {
+  width: 635px;
+}
+
+#af-header .nav-bar .submenu-area .store-menu.show-sub-items:after,
+#af-header .nav-bar .submenu-area .commercial-menu.show-sub-items:after {
+  content: "";
+  position: absolute;
+  left: 270px;
+  top: 3%;
+  height: 90%;
+  width: 1px;
+  background: #e1e1e1;
+}
+
+#af-header .nav-bar .submenu-area .commercial-menu {
+  min-height: 308px;
+}
+
+#af-header .nav-bar .submenu-area .commercial-menu > .nav {
+  position: relative;
+  width: 270px;
+}
+
+#af-header .nav-bar .submenu-area .service-menu > .nav {
+  width: 270px;
+}
+
+#af-header .nav-bar .submenu-area .store-menu {
+  position: relative;
+}
+
+#af-header .nav-bar .submenu-area .store-menu > .nav {
+  width: 270px;
+}
+
+/* -------------- Footer 頁尾區塊 ------------- */
+#af-footer {
+  background: #F1F1F1;
+  padding-top: 68px;
+  min-height: 350px;
+  min-width: 780px;
+  margin-top: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-footer .col-wrapper {
+  border-bottom: 1px solid #DCDCDC;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+#af-footer .col-wrapper .col-item {
+  /*background: #cf0;*/
+}
+
+#af-footer .col-wrapper .col-item > .title {
+  color: #474747;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#af-footer .col-wrapper .af-footer-nav {
+  margin: 15px 0 22px;
+}
+
+#af-footer .col-wrapper .af-footer-nav a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #7d7d7d;
+  line-height: 2em;
+}
+
+#af-footer .col-wrapper .af-footer-nav a:hover {
+  color: #000;
+}
+
+#af-footer .global-block {
+  height: 50px;
+  padding: 12px 0 15px;
+  box-sizing: border-box;
+}
+
+#af-footer .global-block a {
+  color: #313131;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+#af-footer .global-block .extra-link {
+  float: left;
+  line-height: 20px;
+  padding-left: 25px;
+  background: url("//www.asus.com/media/img/2015/images/icons/global_icon.png") 0 0 no-repeat;
+}
+
+#af-footer .global-block .copyright {
+  float: right;
+  line-height: 20px;
+  color: #7d7d7d;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+#af-footer .global-block .copyright a {
+  color: #7d7d7d;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+#af-footer .global-block .copyright .links {
+  display: inline-block;
+}
+
+#af-footer .global-block .copyright .links a {
+  margin-right: 30px;
+}
+
+#af-footer .change-web {
+  display: none;
+}
+
+#asus-api-footer {
+  background-color: #ebebeb;
+  box-sizing: border-box;
+  display: block !important;
+  padding: 0 10px;
+  width: 100%;
+}
+
+#asus-api-footer img {
+  border: medium none;
+}
+
+#asus-api-footer.aai-maxi-w {
+  padding: 0 40px;
+}
+
+#asus-api-footer.aai-maxi-w .aai-inner {
+  background-color: #ebebeb;
+  max-width: 1400px;
+  min-width: 1100px;
+}
+
+#asus-api-footer.aai-maxi-w.aai-bg-black .aai-inner {
+  background-color: #242424;
+}
+
+#asus-api-footer.aai-960 .aai-inner {
+  max-width: 960px;
+}
+
+#asus-api-footer.aai-bg-black {
+  background-color: #242424 !important;
+}
+
+#asus-api-footer.aai-bg-black .aai-footer-span h4 {
+  color: #d8d8d8;
+}
+
+#asus-api-footer.aai-bg-black .aai-fnav > li, #asus-api-footer.aai-bg-black .aai-fnav li > a {
+  color: #c8c8c8;
+}
+
+#asus-api-footer.aai-bg-black #footer_country_link > a, #asus-api-footer.aai-bg-black #aai-copyright a, #asus-api-footer.aai-bg-black .aai-footer-span #call_message a {
+  color: #c8c8c8;
+}
+
+#asus-api-footer.aai-bg-black .aai-fnav li > a:hover, #asus-api-footer.aai-bg-black #footer_country_link > a:hover, #asus-api-footer.aai-bg-black #aai-copyright a:hover {
+  color: #fff;
+}
+
+#asus-api-footer.aai-bg-black .aai-footer-span #call_message a:hover {
+  color: #fff;
+}
+
+#asus-api-footer.aai-bg-black .aai-footer-span #call_center h4, #asus-api-footer.aai-bg-black .aai-footer-span #call_center .tel {
+  color: #c8c8c8;
+}
+
+#asus-api-footer.aai-bg-black .aai-inner {
+  background-color: #242424;
+}
+
+#asus-api-footer .aai-fmiddle {
+  padding: 40px 0 60px;
+}
+
+#asus-api-footer #copyright {
+  margin-bottom: 10px;
+}
+
+#asus-api-footer #copyright > li {
+  float: left;
+  line-height: 1.2;
+  list-style: none;
+}
+
+#asus-api-footer #copyright:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#asus-api-footer .aai-inner {
+  background-color: #ebebeb;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1180px;
+  min-width: 960px;
+  padding-bottom: 20px;
+}
+
+#asus-api-footer .aai-footer-span {
+  float: none;
+  margin-left: 1.5%;
+  width: 23%;
+}
+
+#asus-api-footer .aai-footer-span:first-child {
+  margin-left: 0;
+}
+
+#asus-api-footer .aai-footer-span h4 {
+  color: #474747;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+#asus-api-footer .aai-footer-span #service_call {
+  padding: 4px 0;
+}
+
+#asus-api-footer .aai-footer-span #call_center h4 {
+  color: #7c7c7c;
+  float: left;
+  font-size: 12px;
+  line-height: 10px;
+  margin: 4px 4px 0 0;
+  padding: 0;
+}
+
+#asus-api-footer .aai-footer-span #call_center .tel {
+  color: #7c7c7c;
+  font-size: 12px;
+  margin: 0;
+}
+
+#asus-api-footer .aai-footer-span #call_message {
+  font-size: 12px;
+}
+
+#asus-api-footer .aai-footer-span #call_message a {
+  color: #7c7c7c;
+  text-decoration: none;
+}
+
+#asus-api-footer .aai-footer-span #call_message a:hover {
+  color: #000;
+}
+
+#asus-api-footer .aai-fnav {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+#asus-api-footer .aai-fnav li > a {
+  color: #7c7c7c;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+#asus-api-footer .aai-fnav li > a:hover {
+  color: #000;
+}
+
+#asus-api-footer #extra_link {
+  float: left;
+}
+
+#asus-api-footer #footer_country_link {
+  background: url("//www.asus.com/API/images/global_icon.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  font-size: 14px;
+  padding: 3px 0 3px 24px;
+}
+
+#asus-api-footer #footer_country_link > a {
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+#asus-api-footer #footer_country_link > a:hover {
+  color: #33b9ff;
+}
+
+#asus-api-footer #aai-copyright {
+  color: #959595;
+  float: right;
+  font-size: 12px;
+}
+
+#asus-api-footer #aai-copyright a {
+  border-right: 1px solid #7c7c7c;
+  color: #7c7c7c;
+  font-size: 12px;
+  margin-right: 12px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+#asus-api-footer #aai-copyright a:hover {
+  color: #000;
+}
+
+#asus-api-footer .aai-social-media img {
+  border: medium none;
+}
+
+#asus-api-footer.aai-ez {
+  min-height: 32px;
+  padding: 9px 0 3px;
+}
+
+#asus-api-footer.aai-ez.aai-bg-black {
+  background-color: #242424;
+}
+
+#asus-api-footer.aai-ez.aai-bg-black .aai-logo > a {
+  background: url("//www.asus.com/API/images/aai_ez_b_logo.png") no-repeat scroll 0 0 transparent;
+}
+
+#asus-api-footer.aai-ez .aai-logo > a {
+  background: url("//www.asus.com/API/images/aai_ez_w_logo.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  float: left;
+  height: 16px;
+  margin: 0;
+  width: 76px;
+}
+
+#asus-api-footer.aai-ez #copyright {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.outer-wrapper { 
+  width: 100vw;
+}
+
+@media only screen and (max-width: 720px) {
+  /* ============= 點開效果 ============= */
+  .outer-wrapper {
+    overflow-x: hidden;
+  }
+  body.landingPage #af-header {
+    position: relative;
+  }
+  body.show-menu .outer-wrapper,
+  body.show-slide-sidebar .outer-wrapper {
+    overflow: hidden;
+  }
+  body.show-menu #af-container,
+  body.show-slide-sidebar #af-container {
+    -webkit-transform: translateX(80%);
+    -moz-transform: translateX(80%);
+    -ms-transform: translateX(80%);
+    -o-transform: translateX(80%);
+    transform: translateX(80%);
+  }
+  body.show-menu #af-header .nav-bar,
+  body.show-slide-sidebar #af-header .nav-bar {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: #484848;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+  body.show-menu #af-header .nav-bar .submenu-area,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area {
+    width: 100%;
+    left: 100%;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu {
+    width: 100%;
+    max-height: inherit;
+    min-height: inherit;
+    box-shadow: none;
+    background: none;
+    left: 0 !important;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu:after,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu:after {
+    content: none;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .title,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .title {
+    display: block;
+    height: 60px;
+    background: url("//www.asus.com/media/img/2015/images/icons/af-icon-arrow-01.png") 6px center no-repeat #484848;
+    -webkit-background-size: auto 50%;
+    -o-background-size: auto 50%;
+    background-size: auto 50%;
+    color: #fff;
+    padding: 0 5%;
+    text-indent: 23px;
+    line-height: 60px;
+    border-top: 1px solid #575757;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .nav,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .nav {
+    padding: 0;
+    width: 100%;
+    background: #404040;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .nav li,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .nav li {
+    width: 100%;
+    display: table;
+    height: 60px;
+    border-top: 1px solid #575757;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .nav li:last-child,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .nav li:last-child {
+    border-bottom: 1px solid #575757;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .nav li a,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .nav li a {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    padding: 0 5%;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    max-height: 100%;
+    display: none;
+    background: none;
+    padding: 0;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list {
+    min-height: auto;
+    padding: 0;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item {
+    min-width: inherit;
+    padding: 0;
+    display: none;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .origin-title,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .origin-title {
+    display: block;
+    color: #FFF;
+    height: 60px;
+    background: url("//www.asus.com/media/img/2015/images/icons/af-icon-arrow-01.png") 6px center no-repeat #484848;
+    -webkit-background-size: auto 50%;
+    -o-background-size: auto 50%;
+    background-size: auto 50%;
+    color: #fff;
+    padding: 0 5%;
+    text-indent: 23px;
+    line-height: 60px;
+    border-top: 1px solid #575757;
+    text-transform: uppercase;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group .sub-cat-title,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group .sub-cat-title {
+    height: 60px;
+    display: table;
+    background: #2A2A2A;
+    width: 100%;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group .sub-cat-title a,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group .sub-cat-title a {
+    padding: 0 5%;
+    color: #c3c3c3;
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group > ul > li,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group > ul > li {
+    height: 60px;
+    display: table;
+    width: 100%;
+    border-top: 1px solid #575757;
+    margin: 0;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group > ul > li > a,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .sub-group > ul > li > a {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding: 0 5%;
+    color: #FFF;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .highlight,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .submenu > .display-area .sub-cat-list .sub-item .highlight {
+    display: none;
+  }
+  body.show-menu.show-menu.trans #af-header .main-area,
+  body.show-menu.show-menu.trans #af-header .submenu-area,
+  body.show-slide-sidebar.show-menu.trans #af-header .main-area,
+  body.show-slide-sidebar.show-menu.trans #af-header .submenu-area {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  body.show-menu.menu-level-1 #af-header .main-area,
+  body.show-menu.menu-level-1 #af-header .submenu-area,
+  body.show-slide-sidebar.menu-level-1 #af-header .main-area,
+  body.show-slide-sidebar.menu-level-1 #af-header .submenu-area {
+    *position: relative;
+    *left: 0%;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  body.show-menu.menu-level-2 #af-header .main-area,
+  body.show-menu.menu-level-2 #af-header .submenu-area,
+  body.show-slide-sidebar.menu-level-2 #af-header .main-area,
+  body.show-slide-sidebar.menu-level-2 #af-header .submenu-area {
+    *position: relative;
+    *left: -100%;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  body.show-menu.menu-level-2 #af-header .submenu-area,
+  body.show-slide-sidebar.menu-level-2 #af-header .submenu-area {
+    *position: absolute;
+    *left: 0;
+  }
+  body.show-menu.menu-level-3 #af-header .main-area,
+  body.show-menu.menu-level-3 #af-header .submenu-area,
+  body.show-slide-sidebar.menu-level-3 #af-header .main-area,
+  body.show-slide-sidebar.menu-level-3 #af-header .submenu-area {
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
+  body.show-menu.menu-level-3 #af-header .submenu-area,
+  body.show-slide-sidebar.menu-level-3 #af-header .submenu-area {
+    *position: absolute;
+    *left: -100%;
+  }
+  body.show-menu #af-header .submenu-area,
+  body.show-slide-sidebar #af-header .submenu-area {
+    width: 100%;
+    left: 0;
+  }
+  body.show-menu #af-header .products-menu,
+  body.show-slide-sidebar #af-header .products-menu {
+    position: absolute;
+    left: 0;
+  }
+  body.show-menu #af-header .commercial-menu,
+  body.show-slide-sidebar #af-header .commercial-menu {
+    position: absolute;
+    left: 0;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu {
+    padding: 0;
+    background: none;
+    min-width: inherit;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu.two-column:before, body.show-menu #af-header .nav-bar .submenu-area .hot-menu.three-column:before,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu.two-column:before,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu.three-column:before {
+    content: none;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .more-btn,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .more-btn {
+    height: 60px;
+    line-height: 60px;
+    padding-right: 35px;
+    top: 0;
+    right: 12px;
+    background: url("//www.asus.com/media/img/2015/images/icons/af-icon-arrow-02.png") right 50% no-repeat;
+    background-size: auto 50%;
+    color: #fff;
+    font-size: 16px;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list {
+    width: 100% !important;
+    padding: 0 5% !important;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item,
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1em;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item .title,
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first .title,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item .title,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first .title {
+    color: #FFF;
+    font-size: 14px;
+    height: 2em;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a img,
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first > a img,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item > a img,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first > a img {
+    width: 100%;
+    height: auto;
+  }
+  body.show-menu #af-header .nav-bar .submenu-area .hot-menu .hot-list + .hot-list,
+  body.show-slide-sidebar #af-header .nav-bar .submenu-area .hot-menu .hot-list + .hot-list {
+    width: 100% !important;
+    padding: 0 5% !important;
+  }
+  body.show-menu #af-header.aai-bg-black .af-inner .mobile-menu-toggle .icon-css-menu,
+  body.show-slide-sidebar #af-header.aai-bg-black .af-inner .mobile-menu-toggle .icon-css-menu {
+    background: rgba(255, 255, 255, 0);
+  }
+  #af-header .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -18px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  #af-header .mobile-menu-toggle .icon {
+    display: block;
+  }
+  #af-header .af-inner .nav-bar .icon-search {
+    display: none;
+  }
+  #af-header .af-inner .icon-search{
+    height: 40px;
+    box-shadow: 0 0 0 white;
+  }
+  #af-header .mobile-action {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    min-width: 50px;
+    text-align: center;
+    display: block;
+  }
+  #af-header .af-inner .mobile-action .search-bar {
+    display: block;
+    width: 100%;
+    height: 40px;
+    max-height: 50px;
+    left: 100%;
+    position: fixed;
+    top: 0;
+    margin: 0!important;
+    box-shadow: 0 0 0 white;
+    background: #F2F2F2;
+  }
+  #af-header .af-inner .mobile-action .search-bar.show{
+    left: 0;
+  }
+  #af-header .af-inner .mobile-action .search-bar.show + .icon-search {
+    display: none;
+  }
+  #af-header .af-inner .search-bar:after{
+    height: calc(100vh - 40px);
+  }
+  #af-header .af-inner .mobile-action .search-bar>.input-search {
+    height: 40px;
+    width: 100%;
+    margin: 0;
+    opacity: 1;
+    border: 0;
+    background: #F2F2F2;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  #searchresults{
+    width: 99%!important;
+  }
+  #af-header .af-inner .mobile-action .search-bar>.search-result {
+    position: fixed;
+    top: 40px;
+  }
+  #af-header .af-inner .search-bar .btn.btn-search-submit {
+    opacity: 1;
+    top: 7px;
+    left: 23px!important;
+  }
+
+  #af-header .af-inner .search-bar .icon.icon-close {
+    opacity: 1;
+    top: 12px;
+    right: 8px !important;
+  }
+  #af-header .mobile-action a.btn {
+    line-height: 35px;
+    display: none;
+  }
+  #af-header .mobile-action a.btn > .icon {
+    width: 30px;
+    padding-bottom: 10px;
+  }
+  #af-header .af-inner .nav-member .products-compare .sub-block {
+    height: auto;
+  }
+  .products-compare .aai-vls .span-5col {
+    min-height: auto;
+  }
+  /* 第一層主選單 */
+  #af-header .nav-bar .nav.nav-main > .nav-main {
+    width: 100%;
+    background: #cf0;
+  }
+  #af-header .nav-bar .nav.nav-main > ul > li {
+    display: table;
+    margin: 0;
+    width: 100%;
+    padding: 0 5%;
+    float: none;
+    border-top: 1px solid #575757;
+    border-bottom: 1px solid #575757;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #af-header .nav-bar .nav.nav-main > ul > li + li {
+    margin-top: -1px;
+    width: 100%;
+    padding: 0 5%;
+    margin-left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #af-header .nav-bar .nav.nav-main > ul > li a {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+    text-indent: 0;
+    color: #FFF;
+  }
+  /* 主選單 */
+  #af-header .af-inner .main-area {
+    float: none;
+    width: 100%;
+  }
+  /* 次選單 */
+  #af-header .af-inner .sub-area {
+    position: absolute;
+    top: 0;
+    padding-left: 5%;
+    float: none;
+    width: 100%;
+    min-width: inherit;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* 會員選單 */
+  #af-header .af-inner .sub-area .nav-member {
+    float: none;
+    width: 100%;
+    position: initial;
+  }
+  #af-header .af-inner .sub-area .nav-member .member-item.not-login > a {
+    color: #FFF;
+    text-align: left;
+    width: 100%;
+  }
+  /* 會員選單展開 */
+  #af-header .af-inner .show-member-menu .sub-area {
+    z-index: 5;
+  }
+  #af-header .af-inner .show-member-menu .sub-area .member-item {
+    position: initial;
+  }
+  #af-header .af-inner .show-member-menu .sub-area .member-item .sub-block {
+    position: absolute;
+    left: 0;
+    right: initial;
+    width: 100%;
+  }
+  #af-header .af-inner .nav-member > li + li {
+    margin-left: 5%;
+  }
+  #af-header .af-inner .search-bar {
+    margin-left: 5%;
+  }
+  /* 搜尋框 */
+  #af-header .af-inner .search-bar {
+    display: none;
+  }
+  #af-header .af-inner .search-bar .input-search {
+    background: none;
+  }
+}
+
+.products-compare .aai-mmst-inner {
+  padding: 0;
+}
+
+.products-compare #viewed-list .aai-tm,
+.products-compare #div_compare_panel .aai-tm {
+  margin-top: 0px;
+  padding-top: 10px;
+}
+
+.products-compare #viewed-list .aai-vls,
+.products-compare #div_compare_panel .aai-vls {
+  margin-bottom: 10px;
+}
+
+.products-compare #viewed-list .aai-vls .span-5col,
+.products-compare #div_compare_panel .aai-vls .span-5col {
+  margin-top: 0px;
+  margin-right: 0px;
+}
+
+.products-compare .aai-mst-header {
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.products-compare .aai-mst-header a {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 20px;
+  color: #000;
+  font-size: 14px;
+  margin-right: 6px;
+  margin-bottom: 5px;
+  padding: 2px 14px;
+  text-decoration: none;
+  line-height: 1.2em;
+}
+
+.products-compare .aai-mst-header a.active {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.products-compare .aai-mst-header a.active:hover {
+  text-decoration: none;
+}
+
+.products-compare .aai-mst-header a:hover {
+  text-decoration: none;
+}
+
+.products-compare .comparenow {
+  display: inline-block;
+  margin-top: 55px;
+}
+
+.products-compare .aai-tls-se {
+  display: none;
+  left: 0;
+  position: static;
+  top: 0;
+  width: 96%;
+}
+
+.products-compare .aai-tls-se.active {
+  display: block;
+  padding-top: 30px;
+}
+
+.products-compare .aai-tls-se .aai-tm {
+  margin-top: 10px;
+}
+
+.products-compare .panel-group-title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.products-compare .aai-vls {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+.products-compare .aai-vls .span-5col {
+  display: inline-block;
+  float: left;
+  vertical-align: top;
+  font-size: 12px;
+  margin: 0 2% 16px;
+  min-height: 160px;
+  position: relative;
+  text-align: center;
+  width: 29%;
+}
+
+.products-compare .aai-vls:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.products-compare .aai-vls .span-5col span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.products-compare .aai-vls .span-5col img {
+  border: medium none !important;
+  max-width: 100%;
+}
+
+.products-compare .aai-vls .span-5col:hover .removebutton {
+  visibility: visible;
+}
+
+.products-compare .aai-vls .removebutton {
+  background: url("//www.asus.com/API/images/remove.png") no-repeat scroll 0 0 transparent;
+  height: 20px;
+  position: absolute;
+  right: -8px;
+  text-indent: -9999px;
+  top: -8px;
+  visibility: hidden;
+  width: 20px;
+}
+
+.products-compare .aai-vls .removebutton:hover {
+  background: url("//www.asus.com/API/images/remove_hover.png") no-repeat scroll 0 0 transparent;
+}
+
+.products-compare .compare_group {
+  margin: 0 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 0px;
+}
+
+.products-compare .compare_group .btn-asus {
+  width: auto;
+}
+
+#div_compare_panel > div {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#div_compare_panel .aai-item-title {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 720px) {
+  .products-compare .aai-vls .span-5col {
+    min-height: auto;
+    min-height: auto;
+  }
+  .products-compare #viewed-list .aai-vls .span-5col,
+  .products-compare #div_compare_panel .aai-vls .span-5col {
+    margin-right: 3%;
+  }
+}
+
+#comparison {
+  width: 100%;
+  height: 135px;
+  background-color: #EEE;
+  background-color: rgba(239, 239, 239, 0.95);
+  position: fixed;
+  bottom: -135px;
+  bottom: 0 \0\9;
+  right: 0;
+  left: 0;
+  z-index: 7;
+  -webkit-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -ms-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: translateY(-135px);
+  -ms-transform: translateY(-135px);
+  transform: translateY(-135px);
+  /* 比較按鈕 */
+}
+
+#comparison.close {
+  bottom: -135px \0\9;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+#comparison.close .compare-hidden-toggle {
+  top: -30px;
+  height: 30px;
+}
+
+#comparison .close-btn {
+  position: absolute;
+  right: 15px;
+  top: 2px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #555;
+  z-index: 2;
+}
+
+#comparison .comparison-title {
+  font-size: 12px;
+  line-height: 16px;
+  width: 25%;
+  float: left;
+  color: #737373;
+}
+
+#comparison .comparison-title p {
+  width: 290px;
+}
+
+#comparison .comparison-title .go-to-compare {
+  position: relative;
+  right: initial;
+  right: inherit \9;
+  display: none;
+}
+
+#comparison .comparison-wrapper {
+  position: relative;
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#comparison .title {
+  font-size: 16px;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+#comparison .comparison-items {
+  position: relative;
+  float: right;
+  padding-top: 10px;
+  width: 73%;
+}
+
+#comparison .comparison-items .hidden-product-info {
+  display: none;
+}
+
+#comparison .comparison-ul {
+  float: left;
+  padding-left: 0;
+  width: 80%;
+  margin: 0;
+}
+
+#comparison .comparison-ul .item {
+  position: relative;
+  list-style: none;
+  float: left;
+  margin: 8px 5px 0 5px;
+  width: 135px;
+  text-align: center;
+}
+
+#comparison .comparison-ul .item .product-title {
+  font-size: 12px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #606060;
+}
+
+#comparison .comparison-ul .item .product-image {
+  height: auto;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+#comparison .comparison-ul .item .close {
+  right: 0;
+  top: -7px;
+  width: 20px;
+  height: 20px;
+  background: url("//www.asus.com/media/img/2015/images/icons/compare-close-btn.png") 0 0 no-repeat;
+  position: absolute;
+  display: none;
+}
+
+#comparison .comparison-ul .item + .item {
+  margin-left: 35px;
+}
+
+#comparison .comparison-ul .item:hover .close {
+  display: block;
+}
+
+#comparison .go-to-compare {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  border: 2px solid #00a0e9;
+  padding: 7px 30px;
+  color: #00a0e9;
+  font-size: 12px;
+  text-align: center;
+  margin-top: -16px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  cursor: pointer;
+}
+
+#comparison .go-to-compare:hover {
+  border: 2px solid #008fd8;
+  color: #008fd8;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+#comparison .compare-hidden-toggle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 47px;
+  height: 0;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: url("//www.asus.com/media/img/2015/images/icons/compare-arrow-1.png") 50% 10px no-repeat #efefef;
+}
+
+:root #comparison {
+  /* IE9 設為跟一般一樣 */
+  bottom: -135px \9;
+}
+
+:root #comparison.close {
+  bottom: -135px \9;
+}
+
+@media all and (max-width: 1200px) {
+  /* ~ 1169 */
+  #comparison {
+    width: 100%;
+    height: 255px;
+    -webkit-transform: translateY(-255px);
+    -ms-transform: translateY(-255px);
+    transform: translateY(-255px);
+    bottom: -255px;
+    bottom: 0 \0\9;
+  }
+  #comparison.close {
+    bottom: -255px \9\0;
+  }
+  #comparison .comparison-wrapper {
+    width: 97%;
+    padding-top: 5px;
+  }
+  #comparison .comparison-wrapper .product-image {
+    height: auto;
+    margin: 0 auto;
+    max-width: 60%;
+  }
+  #comparison .comparison-title {
+    float: none;
+  }
+  #comparison .comparison-title > .title {
+    margin: 0;
+  }
+  #comparison .comparison-title > .info {
+    display: none;
+  }
+  #comparison .comparison-title p {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  #comparison .comparison-items {
+    float: none;
+    width: 100%;
+  }
+  #comparison .comparison-ul {
+    float: none;
+    width: 95%;
+    margin: 0 auto;
+  }
+  #comparison .comparison-ul:after {
+    content: "";
+    clear: both;
+    width: 100%;
+    display: block;
+  }
+  #comparison .comparison-ul .item {
+    margin: 0;
+    width: 22.9375%;
+  }
+  #comparison .comparison-ul .item + .item {
+    margin-left: 2.75%;
+  }
+  #comparison > .go-to-compare {
+    position: absolute;
+    top: initial;
+    top: inherit \9;
+    bottom: 10px;
+    right: 6px;
+  }
+  :root #comparison {
+    bottom: -255px \9;
+  }
+  :root #comparison.close {
+    bottom: -255px \9;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #comparison {
+    width: 100%;
+    height: 210px;
+    -webkit-transform: translateY(-210px);
+    -ms-transform: translateY(-210px);
+    transform: translateY(-210px);
+    bottom: -210px;
+    bottom: 0 \9\0;
+    z-index: 7;
+  }
+  #comparison.close {
+    bottom: -210px \9\0;
+  }
+  #comparison .comparison-title {
+    width: 100%;
+  }
+  #comparison .comparison-ul .item .close {
+    display: block;
+    opacity: .5;
+  }
+  :root #comparison {
+    bottom: -210px \9;
+  }
+  :root #comparison.close {
+    bottom: -210px \9;
+  }
+}
+
+/** ___  Plug-in style  ____________________________________________
+ * 
+ *    一些覆寫用的css樣式
+ * ___________________________________________________________ */
+/* ---- bootstrap modal ---- */
+.modal .btn {
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.modal .btn.btn-primary {
+  background: #00A8FF;
+}
+
+.modal .btn.btn-primary:hover {
+  background: #0170BF;
+}
+
+.modal .btn + .btn {
+  margin-left: 5px;
+  padding: 5px 10px;
+  background: #B4B4B4;
+}
+
+.modal .btn + .btn:hover {
+  background: #999;
+}
+
+/* ---- online service ---- */
+#online-service-zenny,
+#online-service-text {
+  position: fixed;
+  right: 60px;
+  bottom: 0;
+  min-width: 130px;
+  z-index: 6;
+}
+
+/* ------ 2019/05/23 update icr sticker style start ------ */
+#online-service {
+  position: fixed;
+  z-index: 6;
+  padding: 5px 20px 5px 10px;
+  bottom: 30.5px;
+  right: 100px;
+  height: auto;
+  border-radius: 100px;
+  border: 0;
+  display: flex;
+  background-color: #0094f2;
+}
+#online-service::after {
+  content: "";
+  position: absolute;
+  background-color: #0094f2;
+  bottom: -4px;
+  right: 25px;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+}
+#online-service > a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+#online-service .icon {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACB9JREFUeNrsXWtsFUUUvkuLUJ4FihBfaSkSEBFUCImgRnkIIhFjRBEiKJCACbEajCYaBEMiJso/fmCUh4AoCYaHKBF5iAoIBSkSA9piiygqFSggKI9ev5Oeq5t1Zu/M7uzevffuSb7c9O7M2Znvzp49c+bM1Eomk4lYgpdmMQUx0THRscREx0THRMcSEx0THYu2FKoUsiwr9IZhItUCH4OAe4E+QG+gM9BOUPwsUA98B3wLbAO2o90XMtBu+YV0CLGRzYChwErgz6Q/+QtYDYwCCsIkWshhFIjGPQqBScAPyWDkKDANuCpvieYRfCgZjtQCozNBtKVCZBA2Gvdtj48FwPg0Rc8BO9j21gANwHnb9SKAdJWxLb+D/3aTtcAU9Ks+p200dN4O1LiMPLLPi4F7dB93NkODgYXAGZd7HKNyOWs6oG8McF7S+dPAbKDY0L3aAC8C9ZL7XQSeyDmioetJ4Iqk0zSCSwKym+2BBUCj5N7P5gzR0DNWQjKNtpGOsr3YLWtjmPC7gV8kZE/NeqKhYyDwt6BzVcB1jrITbSOP3LJehsm+GtghaAsNguFZSzTqdwZ+FnTsc/Y87GW7AA2Ocifo5WmY7FbAx4I2nQRuyFaiPxR0aA/QTlB2pYsXMjEAsr8U3GsLYGUV0aj7iKAjNLq7CsqOV5hwvEtPiEGyO0jczKlZQzTqFQF1Ajt4p6DsrcA5xdkdPd4VpN8Q2QPYzXO+oIuzhegKAUnzBeXKJZ4AmZF9LoQfB14GSn2QfD0wCzgl0D878kTTbI6JcBLTxlGuO8/QnLIfaMl4K80Ib2QvYi4wBLjGpV3XAsOAV4FdLj59avLULupETxA0fJrApz0hKPcb0E0QeKrRCB6d5QBSFaNWwzTZZUbUid7iaPCvqZgFxyJeAi4JOnZG5srxU1LBP0RYUhVZounRFUx13+Brg4BKSafIfx6o6JY9Bew1SCjpmgLMEVzrGVWiJwkaOx1Y59JR8k76eBg9PYAXgM/YXKgKBbU2AzOB3g4bfsVPHCTweDT0NMcHPfZzgSEabdsMjMM9Tvh002i5qgfQHaDZXQnHqknOMI4CB4Fa3K9RoqeS+5GSncBzwF7UuZSxeDT7wEvSxH5lo4psbqRW4tGeeS6mbRHQN1TTge87MsFeZAVQloigoF2PKbiTRHjHwIkme8ouk47Q7Gs50C8RYeGZoor8CNwcGNFsKho0CN5N/qgovhFRoks1+nbKOXCMEE1ksU+sI6WJLBIONOnIcfsgknGo+yJaDHRJ5LboztCI5HfSFWqm8Us/iI8RAY+mIl5M3c6goFFrTR0tgOeBbRxvfgVoG/CPcz/zo++OOE2Hy4zOiOngAJJoialSNSRKvjywVbJk1lZRR7HHfu7xbaOB23xMb1WJnuGiY6aijskuOmYFTHSSefJlox8KwTYOc7mmOtMc6vGaKRnj10YPDqGRbtPbK4o6Lnu8ZkoG+SW6ZwiN/Mjl2gZFHRsM6PAjN/l6GfoMQara6AJgraD+JxywUtFB+dWrJCvbLUKw0Ulf0TsPvqVdyizLqtWIwI0DKHOJQoabgGWor/zYc5DqUWAUUMDRwaUqkbcU0fg45aO/wlCnKtGXudGBEh2RmaEfoomn5n5sdF0iFhX5ye/LcH/MoZIc8Ev01phDfzypEr1aw5fNV2lknrwTjZfZcXysirl0lbXg6Zjv6B1kTkizq2wUetpnuxVQJhq/1uFE0wp3kK4Vrd6s4QnGfT51DWc96ynYEzDR88HPgXQN0llhodnbxoBmhuTTH7HVu0CJ6R5J7sL1U3JENefZw8zwC/vOMSMrLPjV6BF5ONG078+0UMzZvjLeEpjuUdc0rv/vpCnxX46HSdkNPABeLqr8gl5WwYs4KdzomqEgzet8ujwKgY5bBNvr9mrU76TYr1Wi1Z9AUsJ4z2C1S2N+19mQKQnc/2/Xlkv9kZI9hZM12lCehmDq71jdgWsiU6mACf+AiU3J1ypJiw5dlGn6jaSD9G4Y7RxF9Dd/L3t3kL5CjTYMkKx0r+R+FnixEEEkOZZQsqAPb6Fckjdt355Rx8nqdWmSyUlPueb9RbndrTXqR/cYCUFje2smnoukxp4pqnHv152Zrpr1s4dobjAlsix12VbslhtH9Tp4vO9uh741OU20reF9eR9LujS0Bi7X18e9Ogl+2AoTRGfsvA4PJNALjUikWR7tNaSNR3SWB+VV7wOqdFZiJPd4OtF0hohd+kDvQR2ijfnRuSq8o9cuhzzoMJJ7l8sk34WP/o6v3zN5g3hEN/GwUZDP3dUUnzHRTeSMEO1KMDlw855oTq487CD5MnBjTLRZohcIRvPbpk1xXhONvo2TBLFK8p5oXiCgUwn6+TzZYIjg+AiSCUE4F1lDNK98zBMcG0R7w1/TOV+DD2y5ICB5SVBeXFYQzQcSHkszBacfoL9C/GShpH6l7jaOXIt1dAP+UAwo1Ys2ivK5d24HDVabOkIom4nWXQz+lOu14rPz3peYiZQccDtMJS+Ipp2pHmPRuyQvOqcsD+AQQyEKE9EWr9vt0i2h1QLPWJa1LqyORJ3oUsP6qoE3gUVKKQJ5RLQJMk4D6wGKXWySndOR70RXe6xHCT60+Wg7sIsTfzIqkV5h4XNCyZ7qNIA6VIo2H81Qm4XfRzrwz2TpztaWZYpkT+5IhPzoYo1/tvC919XvvPajbY2nc0K+SkPyTpMTj3wOKtFmzcd5pnjSlmKwiU/qLYiyhbCS8f+cDUXiVfCY6JjoWGKiY6LzXv4RYADnu/uCvyf1NAAAAABJRU5ErkJggg==");
+  background-position: center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+#online-service p {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------ 2019/05/23 update icr sticker style end ------ */
+
+#online-service > .btn,
+#online-service-zenny > .btn,
+#online-service-text > .btn {
+  display: block;
+  height: 30px;
+  line-height: 32px;
+  color: #FFF;
+  font-size: 14px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 0px 22px 0px 42px;
+  background-color: #565656;
+  background: 14px 4px no-repeat rgba(0, 0, 0, 0.7) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiBAMAAADIaRbxAAAAA3NCSVQICAjb4U/gAAAAMFBMVEX///////////////////////////////////////////////////////////////9Or7hAAAAAEHRSTlMAESIzRFVmd4iZqrvM3e7/dpUBFQAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMS8wNC8xNZITvtMAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAA40lEQVQoka3ROwrCQBAG4E0MPtAiN9ALiF5A8AYJXkDP4RnEWNrFTvQAttpapbDQLlhpIwGJoOjmd5LNa1OKPywsH8MyM8vY7ymNXfBlN4OygzCfUQKaCxHej8VCkqeAGrLMCiVxkYZ8wpcakuxIDEl8EluSFwk1w+l6oxNeSehmtvHWLfiqB0TCWRUP1qRX7UjIW3VqxMCZOQhIaMrTFlh54BOattCyaLojyb0wKLAgUbwcBDorjOGLFWZFgSlW1kvlEG9VmcZw1ZPVqwKOKbAKsF/PB7kPHOIi/6gabHT293wB/O8Zr5MSB2UAAAAASUVORK5CYII=");
+  background-size: auto 80%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: none;
+}
+
+#online-service-text,
+#online-service-zenny {
+  min-width: 116px;
+}
+
+#online-service-text > .btn,
+#online-service-zenny > .btn {
+  height: 32px;
+  line-height: 32px;
+  color: #222;
+  font-size: 13px;
+  text-align: left;
+  border-width: 1px;
+  border-color: #cfcfcf;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 0px 16px 0px 44px;
+  background-color: #fff;
+  background: 12px 6px no-repeat #fff;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAUCAMAAABRYFY8AAAAA3NCSVQICAjb4U/gAAAAVFBMVEX///8AlPIAlPIAlPIAlPIAlPIAlPIAlPIAlPIAlPIAlPIAlPIAlPIAlPL////v+P7P6/2/5Pyv3fuP0Plww/hgvPdQtvZAr/UwqPQgofQQm/MAlPLLtQxlAAAADnRSTlMAESIzRFVmiJmqu8zd7qUOxRYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAFnRFWHRDcmVhdGlvbiBUaW1lADA0LzI1LzE2V/T0VQAAAJFJREFUGBltwYF2gjAQRcFnWJKIbLTVFvX+/3926+GIgjPSk5lprasj/8ZqWqSBxZA0y84rz3roWesVkrPmSVJlq0pytlzqCPeJMN2B643QyQhf7Qcu7Ruu7UgwGeHcJvhtZ7gdTwST+ETSnq29JGPLFAprRQ+Vd1Wz7Cw862k3MBvLTosOOJRS+qRXyTlkvfkD5x8eSmz48uAAAAAASUVORK5CYII=");
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#online-service-zenny > .btn {
+  border-radius: 6px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 16px 0px 48px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAMAAACnDzTfAAAAA3NCSVQICAjb4U/gAAACf1BMVEX//////////////////////////////////////////////////////////////////vr++PX/9u73+Pn/7ub28O3v8fL/7OH/5dn/4tb55Nr/4dDk5uf53tD23tPi4N/92cjX4eTw1sr80b7X2dv/zbfpz8P9ybH/wqjvxbD/vaH2v6jjw7bDxcX/uJn/s5O/wcL1tJn/rIn9qoXTsaPLs6riq5SztLX/onr/nHL/mm3Gppj/lWjBopWnp6j/kmOepqy2oJb/iln+iFb/hVL/hEj/hESulYvbimn/f0bMi3HUiWzbg1/6fUj/e0Kui33/eDv2ekOVj5HDhG3vekT4dz/seEb/czjxdkGGjZX1dDz/cjSKioy1gG/odELwcTv6bzTfdUrhc0W+el/vbTXKdE/jbTqgemvOcUrgbDnWa0LrZi3XaTrGbEV+e3vjZC+cc2vQaDq0bU/MZjPZYjB8dXJ2c3TFYTeSbWC+Yjl4cG3gWB/dVh2OZ1i/Wi/kUhVsa23BWS20WjSGZFW4VSunWDfDUiKgWj2YWz/dSQtiYWGjUjCqUCqVVDaqTCWdTy27RheVTjB2UkSRSy9oUkp9TDeCSjOGRClNUVJmS0G3OBRsSDpQTUujNyVnRThFTFBzQSqaMCxtPSl0OiNbPzRhOyg9QUN1MxhXOCxKOjM/OzxYMCBBNC9wKAxLMSlpJw0zMzNHLSJRKBk5LCotLCxBJxxNIQ9BIhdBHxFQFxgtIBxLGQ4uHRc6Gw4iGxcmGxYpFxEzFQo2EwYbFhQYExMfEQ0oDQQgDwkQEhMaDQklCgAvBgQZCQUPCAcZBQASBQIKBgYPAwAIAQAAAwUAAABeXyvUAAAAD3RSTlMAESIzRFVmd4iZqrvM3e5GKvWZAAAACXBIWXMAAAsSAAALEgHS3X78AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNS8wNC8xNjP/y+QAAAKPSURBVCjPXZL7P9NRGMe/wzZfzc42cuumRKXLhHLJpZjli05HtchtLqWSLgiJ0OgioXShkpZLqhGrUFIRc8sy2/MH9d0Q+fz6fn2e85zn86GoJdnQAnuhUGDH41CrxBO5S4MjZLJwP0+JrdVKwkWe4TipQKUqTsNEtkfCX0Z8xyCMG4anfmg6OxrzE3GkO/0PuUSShPxXJtCl4aS8u611CrxtEfIcZSQjJmYIwJAnxxhnq7W5xN3WjDiiEJKQevAcsNLVxjMMI2/4WcA4c80TtxOszIoe0FY1TgCMdD6srS1p6lcGItYmlpH8ou6BKwihLVpYkGGyWrHBhuJ54quFKeOtKKCv2WnXPMyOzgPM1KsUUjvKLhCXN7dMhzqMg2E9+njNTez1Anpiz5BIe8o+AivUY+DvZAQIE+1Hu1O2Sj50RccQRkgJowiWt8MNVKT/vNlF4gNwCR3uCj2mjLIwwrTDrD9yEu3NEFcCVDrs683KJItM/gjgT1Xo8Zoa7wCA9+iovjvDwmQkPjPXZN7898vnscgnDLn1951KNTNBOL4zdEQDRiN8e/119uxG5wODppaUJ9kso6WMFtpOToMRJnrm2Nkzn6ZGujvKy4MFlLUrw75Wl6OzHIR1w5vHF+PiMtM92BDXBDFqgKc5A6bFg305z2B2dzGbPtcVM7d0oLl8u+v75OSIRsVgpYIkL4REexN8Qg1j7fdvVtcVJ6dfKC1LTPBFlkpxaF/CNAFMjOr1oKsvragoU4aIuAvBWyMpHgb49WAOhg0mTfnpdD8xb6kwVrRHB+vrnYM2lQFMb3cg7ooS8sX+zwzsFwejSt4Vbvq/oBSHL/Y6VHjv+s51a2nr1cWmODZ8mqb53GXPX/ZyCZT6MhUdAAAAAElFTkSuQmCC");
+}
+
+#searchresults {
+  background-color: white;
+  font-size: 14px;
+  line-height: 10px;
+  padding: 0.1px 0px;
+  border: none;
+  margin: auto !important;
+  width: 1170px;
+  text-align: left;
+}
+
+#searchresults .title{
+  padding: 22px 12px 12px;
+  font-size: 12px;
+  display: block;
+  color: #868686;
+}
+
+#searchresults > a + .title{
+  padding: 25px 12px 12px;
+  border-top: 1px solid #D5D5D5;
+  margin-top: 22px;
+}
+
+#searchresults > a {
+  display: block;
+  background-color: white;
+  clear: left;
+  padding: 7px 14px;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+#searchresults > a:first-child {
+  margin-top: 10px;
+}
+
+#searchresults > a:last-child {
+  margin-bottom: 35px;
+}
+
+#searchresults > a.MoreTag {
+  height: 10px;
+  text-align: right;
+  padding-right: 1%;
+  color: gray;
+}
+
+#searchresults > a:hover {
+  background-color: #F2F2F2;
+}
+
+#searchresults > a img {
+  float: left;
+  padding: 5px 10px;
+  width: 30px;
+  height: 30px;
+}
+
+#searchresults > a span {
+  color: #555555;
+}
+
+#searchresults > a span.keyword {
+  color: #000;
+}
+
+#searchresults > a span.searchheading {
+  display: block;
+  padding: 0;
+  color: #191919;
+  line-height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#searchresults > a span.searchheadingDB {
+  display: block;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-right: 5px;
+  color: #191919;
+  line-height: 20px;
+}
+
+#searchresults > a span.category {
+  display: block;
+  font-size: 1px;
+  color: #AAFFEE;
+  background-color: #DDDDDD;
+  line-height: 1;
+}
+
+#searchresults > a span.seperator {
+  float: right;
+  padding-right: 15px;
+  margin-right: 5px;
+  background-image: url("//www.asus.com/media/img/2015/images/shortcuts_arrow.gif");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+#searchresults > a span.seperator a {
+  background-color: transparent;
+  display: block;
+  margin: 5px;
+  height: auto;
+  color: #ffffff;
+}
+
+#searchresults .highlight {
+  background-color: #F2F2F2;
+}
+
+#searchresults .keyword {
+  background: none repeat scroll 0 0 transparent;
+  font-size: initial;
+  padding: 0;
+  font-weight: 600;
+}
+
+/* ------------- Part ---------------- */
+/** ___  Landing page new layout  ____________________________________________
+ * 
+ *    首頁重新刻結構
+ * ___________________________________________________________ */
+body.show-header-menu .link-area {
+  display: none;
+}
+
+.landingPage {
+  background: white;
+}
+
+#af-container > .scale {
+  min-height: 600px;
+  padding-top: 62px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#af-container > .af-part .link-area {
+  background: url("//www.asus.com/media/img/2015/images/space.gif");
+}
+
+.af-part {
+  /* 原理: 定義此區塊基本字體大小，其他字型全部吃em */
+  font-size: 1vw;
+  max-width: 2000px;
+  min-width: 800px;
+  margin: 0 auto -2px;
+  line-height: 1;
+  background: center center no-repeat;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* 第一 cut 往下搬 */
+  /* 第一 cut */
+  /* 第二 cut */
+  /* 兩欄版 */
+  /* 最後一 cut */
+}
+
+.af-part.layout-base {
+  background-color: #fff;
+}
+
+.af-part .link-area {
+  position: absolute;
+  left: 0.5%;
+  top: 10px;
+  width: 99%;
+  height: 100%;
+  z-index: 5;
+  text-align: left;
+  text-indent: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.af-part .af-ctrl {
+  /*自行控制斷行 */
+  white-space: nowrap;
+}
+
+.af-part .slogan {
+  font-family: "Roboto", "Segoe UI", "Microsoft JhengHei";
+  font-weight: 300;
+  color: #333;
+}
+
+.af-part .summary {
+  color: #555;
+}
+
+.af-part + .af-part.af-hero {
+  border-top: 3px solid #fff;
+}
+
+.af-part.af-hero {
+  width: 100%;
+  height: 100%;
+  border-top: 0px;
+  padding-top: 60px;
+  max-height: 100% !important;
+  min-height: 640px;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.af-part.af-hero:after {
+  content: "";
+  display: block;
+  padding-top: 100% !important;
+}
+
+.af-part.af-hero > .inner {
+  padding-top: 60px;
+}
+
+.af-part.af-hero.full-width > .inner {
+  max-width: 100%;
+}
+
+.af-part.af-second {
+  border-top: 3px solid #fff;
+}
+
+.af-part.af-third {
+  border-top: 3px solid #fff;
+}
+
+/* Hero特別處理版 */
+.af-hero.af-part {
+  background-position: 50% 50%;
+}
+
+.af-hero.hero-layout-2 {
+  /* CN */
+  overflow: visible;
+}
+
+.af-hero.hero-layout-2 .inner {
+  max-width: 1170px;
+  padding-top: 0;
+}
+
+.af-hero.hero-layout-2 .group-block.group-1 {
+  position: relative;
+  left: -10%;
+  top: -2%;
+  width: 80%;
+  height: 106%;
+}
+
+.af-hero.hero-layout-2 .group-block.group-1 .cover-image {
+  height: 100%;
+}
+
+.af-hero.hero-layout-2 .group-block.group-1 .cover-image > img {
+  max-width: 130%;
+  max-height: 100%;
+}
+
+.af-hero.hero-layout-2 .group-block.group-2 {
+  position: absolute;
+  right: 3%;
+  top: 40%;
+  width: 40%;
+}
+
+.af-hero.hero-layout-2 .group-block.group-2 .title {
+  text-align: center;
+}
+
+.af-hero.hero-layout-2 .group-block.group-2 .title.pic > img {
+  width: 100%;
+}
+
+.af-hero.hero-layout-2 .group-block.group-2 .slogan {
+  margin-top: 1em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.af-hero.hero-layout-3 {
+  /* IN */
+  background-position: center center;
+}
+
+.af-hero.hero-layout-3 .title {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: 35%;
+  width: 65%;
+}
+
+.af-hero.hero-layout-3 .title.pic > img {
+  max-width: 100%;
+}
+
+.af-hero.hero-layout-3 .slogan {
+  font-size: 1.55em;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: 36%;
+  width: 80%;
+}
+
+.af-hero.hero-layout-3 .slogan.pic > img {
+  max-width: 100%;
+}
+
+.af-hero.hero-layout-3 .summary {
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: 38%;
+  width: 95%;
+}
+
+.af-hero.hero-layout-3 .cover-image {
+  max-height: 100%;
+  width: 99%;
+}
+
+.af-hero.hero-layout-3 .group-block.group-1,
+.af-hero.hero-layout-3 .group-block.group-2 {
+  position: absolute;
+  left: initial;
+  right: 5%;
+  min-width: 300px;
+}
+
+.af-hero.hero-layout-3 .group-block.group-1 {
+  top: 2%;
+  height: 50%;
+}
+
+.af-hero.hero-layout-3 .group-block.group-2 {
+  top: 50%;
+  height: auto;
+}
+
+.af-hero.hero-layout-3 .group-block .slogan {
+  margin: 2.5% auto;
+}
+
+.af-hero.hero-layout-3 .group-block .cover-image {
+  text-align: center;
+}
+
+.af-hero.hero-layout-3 .group-block .cover-image img {
+  width: 100%;
+  height: auto;
+}
+
+.af-hero.hero-layout-4:after {
+  padding-top: 0 !important;
+}
+
+.af-hero.hero-layout-4 .inner {
+  max-width: 1170px;
+  padding-top: 60px;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.af-hero.hero-layout-4 .title {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.af-hero.hero-layout-4 .slogan {
+  font-size: 1.55em;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.af-hero.hero-layout-4 .summary {
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+  line-height: 1.3;
+}
+
+.af-hero.hero-layout-4 .cover-image {
+  text-align: center;
+  height: 100%;
+}
+
+.af-hero.hero-layout-4 .cover-image > img {
+  max-height: 100%;
+  max-width: 100%;
+  margin-bottom: -5%;
+  position: relative;
+  bottom: 0%;
+}
+
+.af-hero.hero-layout-4 .group-block.group-1 {
+  padding-top: 5%;
+  height: 30%;
+  position: relative;
+  z-index: 4;
+}
+
+.af-hero.hero-layout-4 .group-block.group-2 {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 65%;
+}
+
+.af-hero.hero-layout-5 {
+  /* 原layout-1 */
+  max-height: 640px;
+  border-top: 4px solid #fff;
+}
+
+.af-hero.hero-layout-5:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.af-hero.hero-layout-5 .inner {
+  max-width: 1170px;
+}
+
+.af-hero.hero-layout-5 .group-block {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.af-hero.hero-layout-5 .group-block.group-1 {
+  left: 0;
+  width: 40%;
+  z-index: 1;
+}
+
+.af-hero.hero-layout-5 .group-block.group-2 {
+  right: 0;
+  width: 60%;
+}
+
+.af-hero.hero-layout-5 .group-block .title {
+  position: relative;
+  text-align: center;
+  top: 32%;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.af-hero.hero-layout-5 .group-block .title.text {
+  font-size: 3em;
+}
+
+.af-hero.hero-layout-5 .group-block .title.pic > img {
+  max-width: 100%;
+}
+
+.af-hero.hero-layout-5 .group-block .slogan {
+  position: relative;
+  top: 36%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.af-hero.hero-layout-5 .group-block .slogan.text {
+  line-height: 1.2;
+  font-size: 2em;
+}
+
+.af-hero.hero-layout-5 .group-block .slogan.pic > img {
+  max-width: 100%;
+}
+
+.af-hero.hero-layout-5 .group-block .summary {
+  position: relative;
+  top: 40%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.af-hero.hero-layout-5 .group-block .cover-image {
+  height: 100%;
+  width: 99%;
+  width: 99%;
+  max-height: 100%;
+}
+
+.af-hero.hero-layout-5 .group-block .cover-image > img {
+  max-width: 99%;
+  max-height: 100%;
+}
+
+.af-hero.hero-layout-5.full-width .group-2 {
+  right: 0;
+  top: 10%;
+  width: 60%;
+  height: 80%;
+}
+
+.af-hero.hero-layout-5.full-width .title {
+  position: relative;
+  text-align: center;
+  top: 35%;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.af-hero.hero-layout-5.full-width .title.pic > img {
+  max-width: 100%;
+}
+
+.af-hero.hero-layout-5.full-width .slogan {
+  position: relative;
+  top: 36%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.55em;
+}
+
+.af-hero.hero-layout-5.full-width .slogan.pic > img {
+  max-width: 100%;
+}
+
+.af-hero.hero-layout-5.full-width .summary {
+  position: relative;
+  top: 38%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.af-hero.hero-layout-5.full-width .cover-image {
+  height: 100%;
+}
+
+.af-hero.hero-layout-5.full-width .cover-image img {
+  max-height: 100%;
+  max-width: 120%;
+}
+
+.af-hero.hero-layout-6 {
+  /* 原layout-2 */
+  max-height: 640px;
+}
+
+.af-hero.hero-layout-6:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.af-hero.hero-layout-6 .inner {
+  max-width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.af-hero.hero-layout-6 .group-1 {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.af-hero.hero-layout-6 .title {
+  position: relative;
+  top: 21%;
+  font-size: 2.5em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.af-hero.hero-layout-6 .title.pic {
+  width: 40%;
+}
+
+.af-hero.hero-layout-6 .title.pic > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.af-hero.hero-layout-6 .slogan {
+  position: relative;
+  width: 80%;
+  top: 22%;
+  font-size: 1.75em;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.af-hero.hero-layout-6 .slogan.text {
+  font-size: 1.25em;
+}
+
+.af-hero.hero-layout-6 .summary {
+  position: relative;
+  top: 5%;
+  width: 80%;
+  margin: 1% auto 2%;
+  text-align: center;
+}
+
+.af-hero.hero-layout-6 .summary.text {
+  font-size: 1.5em;
+}
+
+.af-hero.hero-layout-6 .cover-image {
+  position: relative;
+  top: 27%;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.af-hero.hero-layout-6 .cover-image > img {
+  max-width: 75%;
+  max-height: 100%;
+}
+
+.af-part.black-ver {
+  background-color: #111;
+}
+
+.af-part.black-ver .title,
+.af-part.black-ver .slogan,
+.af-part.black-ver .summary {
+  color: #fff;
+}
+
+.layout-base {
+  overflow: hidden;
+}
+
+.layout-base:after {
+  /* 透過 padding-top 去拉高度 */
+  display: block;
+  padding-top: 0%;
+  width: 10px;
+}
+
+.layout-base .inner {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* 左右水平 滿版 layout*/
+.layout-1 {
+  max-height: 640px;
+  border-top: 4px solid #fff;
+  /*
+  &.af-hero{
+    .group-2{
+      @extend .af-vc-wrap;
+    }
+
+    .cover-image{
+      @extend .af-vc-ele;
+      width: 99%;
+      // height: auto;
+      max-height: 100%; 
+    }
+  }
+  */
+}
+
+.layout-1:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.layout-1 .inner {
+  max-width: 1170px;
+}
+
+.layout-1 .group-block {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.layout-1 .group-block.group-1 {
+  left: 0;
+  width: 40%;
+  z-index: 1;
+}
+
+.layout-1 .group-block.group-2 {
+  right: 0;
+  width: 60%;
+}
+
+.layout-1 .group-block .title {
+  position: relative;
+  text-align: center;
+  top: 32%;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.layout-1 .group-block .title.text {
+  font-size: 3em;
+}
+
+.layout-1 .group-block .title.pic > img {
+  max-width: 100%;
+}
+
+.layout-1 .group-block .slogan {
+  position: relative;
+  top: 36%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.layout-1 .group-block .slogan.text {
+  line-height: 1.2;
+  font-size: 2em;
+}
+
+.layout-1 .group-block .slogan.pic > img {
+  max-width: 100%;
+}
+
+.layout-1 .group-block .summary {
+  position: relative;
+  top: 40%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.layout-1 .group-block .cover-image {
+  height: 100%;
+  width: 99%;
+}
+
+.layout-1 .group-block .cover-image > img {
+  max-width: 99%;
+  max-height: 100%;
+}
+
+.layout-1.full-width .group-2 {
+  right: 0;
+  top: 10%;
+  width: 60%;
+  height: 80%;
+}
+
+.layout-1.full-width .title {
+  position: relative;
+  text-align: center;
+  top: 35%;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.layout-1.full-width .title.pic > img {
+  max-width: 100%;
+}
+
+.layout-1.full-width .slogan {
+  position: relative;
+  top: 36%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.55em;
+}
+
+.layout-1.full-width .slogan.pic > img {
+  max-width: 100%;
+}
+
+.layout-1.full-width .summary {
+  position: relative;
+  top: 38%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.layout-1.full-width .cover-image {
+  height: 100%;
+}
+
+.layout-1.full-width .cover-image img {
+  max-height: 100%;
+  max-width: 120%;
+}
+
+/* 上下垂直layout */
+.layout-2 {
+  max-height: 640px;
+  /* Hero 版 */
+  /*
+  
+  &.af-hero{
+    .title{
+      top: 21%;
+    }
+    .slogan{
+      top: 22%;
+      font-size: 1.75em; 
+    }
+    .cover-image{
+      top: 27%;
+    }
+    
+  }
+  */
+}
+
+.layout-2:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.layout-2 .inner {
+  max-width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.layout-2 .group-1 {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.layout-2 .title {
+  position: relative;
+  top: 12%;
+  font-size: 2.5em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.layout-2 .title.pic {
+  width: 40%;
+}
+
+.layout-2 .title.pic > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.layout-2 .slogan {
+  position: relative;
+  top: 14%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.layout-2 .slogan.text {
+  font-size: 1.25em;
+}
+
+.layout-2 .summary {
+  position: relative;
+  top: 5%;
+  width: 80%;
+  margin: 1% auto 2%;
+  text-align: center;
+}
+
+.layout-2 .summary.text {
+  font-size: 1.5em;
+}
+
+.layout-2 .cover-image {
+  position: relative;
+  top: 19%;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.layout-2 .cover-image > img {
+  max-width: 75%;
+  max-height: 100%;
+}
+
+/* 左右水平 layout + 右邊圖出血 */
+.layout-3 {
+  max-height: 640px;
+  /* Hero 版 */
+}
+
+.layout-3:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.layout-3 .inner {
+  max-width: 1170px;
+}
+
+.layout-3 .group-block {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.layout-3 .group-block.group-1 {
+  left: 0;
+}
+
+.layout-3 .group-block.group-2 {
+  right: 0;
+}
+
+.layout-3 .group-block .title {
+  position: relative;
+  text-align: center;
+  top: 34%;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.layout-3 .group-block .title.pic > img {
+  max-width: 100%;
+}
+
+.layout-3 .group-block .slogan {
+  position: relative;
+  top: 38%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.55em;
+  line-height: 1.3;
+}
+
+.layout-3 .group-block .summary {
+  position: relative;
+  top: 41%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.layout-3 .group-block .cover-image {
+  height: 100%;
+  width: 100%;
+}
+
+.layout-3 .group-block .cover-image > img {
+  position: relative;
+  top: -10%;
+  width: 120%;
+}
+
+.layout-3.af-hero .group-2 .cover-image {
+  height: auto;
+}
+
+.layout-3.af-hero .group-2 .cover-image > img {
+  width: auto;
+  max-width: 120%;
+  max-height: 100%;
+}
+
+/* 左右水平 layout + 左邊圖出血 */
+.layout-4 {
+  max-height: 640px;
+  border-top: 4px solid #fff;
+}
+
+.layout-4:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.layout-4 .inner {
+  max-width: 1170px;
+}
+
+.layout-4 .group-block {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.layout-4 .group-block.group-1 {
+  left: 0;
+  width: 60%;
+}
+
+.layout-4 .group-block.group-2 {
+  right: 0;
+  width: 50%;
+}
+
+.layout-4 .group-block .title {
+  position: relative;
+  text-align: center;
+  top: 34%;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.layout-4 .group-block .title.pic > img {
+  max-width: 100%;
+}
+
+.layout-4 .group-block .slogan {
+  position: relative;
+  top: 38%;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.55em;
+}
+
+.layout-4 .group-block .summary {
+  position: relative;
+  top: 41%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+}
+
+.layout-4 .group-block .cover-image {
+  height: 100%;
+  width: 100%;
+}
+
+.layout-4 .group-block .cover-image > img {
+  position: relative;
+  top: -8%;
+  width: 120%;
+}
+
+/* 左右水平 layout + 左60 右40 */
+.layout-5 {
+  max-height: 640px;
+  border-top: 4px solid #fff;
+}
+
+.layout-5:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.layout-5 .inner {
+  max-width: 1170px;
+}
+
+.layout-5 .group-block {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.layout-5 .group-block > .inner {
+  border: 1px solid #fff;
+}
+
+.layout-5 .group-block.group-1 {
+  left: 0;
+  width: 60%;
+}
+
+.layout-5 .group-block.group-2 {
+  right: 0;
+  width: 40%;
+}
+
+.layout-5 .group-block .title {
+  position: relative;
+  text-align: center;
+  top: 34%;
+  width: 65%;
+  margin: 0 auto;
+  font-size: 3.75em;
+}
+
+.layout-5 .group-block .title.pic > img {
+  max-width: 100%;
+}
+
+.layout-5 .group-block .slogan {
+  position: relative;
+  top: 38%;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.55em;
+  line-height: 1.2;
+}
+
+.layout-5 .group-block .summary {
+  position: relative;
+  top: 41%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.layout-5 .group-block .cover-image {
+  height: 100%;
+  width: 100%;
+}
+
+.layout-5 .group-block .cover-image > img {
+  position: relative;
+  top: -5%;
+  width: 100%;
+}
+
+.layout-5.full-width .cover-image > img {
+  height: 100%;
+}
+
+/* 左右水平 layout + 55分 正常縮放*/
+.layout-6 {
+  max-height: 640px;
+  border-top: 4px solid #fff;
+}
+
+.layout-6:after {
+  content: "";
+  padding-top: 50%;
+}
+
+.layout-6 .inner {
+  max-width: 1170px;
+}
+
+.layout-6 .group-block {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.layout-6 .group-block > .inner {
+  border: 1px solid #fff;
+}
+
+.layout-6 .group-block.group-1 {
+  left: 0;
+}
+
+.layout-6 .group-block.group-2 {
+  right: 0;
+}
+
+.layout-6 .group-block .title {
+  position: relative;
+  text-align: center;
+  top: 34%;
+  width: 65%;
+  margin: 0 auto;
+  font-size: 3.75em;
+}
+
+.layout-6 .group-block .title.pic > img {
+  max-width: 100%;
+}
+
+.layout-6 .group-block .slogan {
+  position: relative;
+  top: 38%;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.55em;
+  line-height: 1.2;
+}
+
+.layout-6 .group-block .summary {
+  position: relative;
+  top: 41%;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.layout-6 .group-block .cover-image {
+  height: 100%;
+  width: 100%;
+}
+
+.layout-6 .group-block .cover-image > img {
+  position: relative;
+  width: 100%;
+}
+
+/* ------------- 底下功能區 ---------------- */
+#af-container > .action-area {
+  height: 254px;
+  border-top: 3px solid #fff;
+}
+
+#af-container > .action-area .block {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  border-right: 1px solid #fff;
+}
+
+#af-container > .action-area .block + .block {
+  border-left: 2px solid #fff;
+}
+
+#af-container > .action-area .block:before {
+  position: absolute;
+  transition: all 0.2s ease 0s;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=00);
+  opacity: 0;
+  background: #000;
+  z-index: 1;
+}
+
+#af-container > .action-area .block:hover:before {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+}
+
+#af-container > .action-area .block .title {
+  font-size: 22px;
+  color: #fff;
+}
+
+#af-container > .action-area .block .info {
+  margin-top: 0.6em;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #FFF;
+}
+
+#af-container > .action-area .block .bg {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  left: -100%;
+  height: 100%;
+  width: auto;
+  margin: auto;
+}
+
+#af-container > .action-area .cover {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 2;
+  max-width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ------------- 兩欄區 ---------------- */
+.af-two-cols {
+  position: relative;
+  display: block;
+  height: 100%;
+  max-height: 400px;
+  background: #F2F2F2;
+  border-top: 4px solid #fff;
+}
+
+.af-two-cols:after {
+  content: "";
+  display: block;
+  padding-top: 20%;
+  width: 10px;
+}
+
+.af-two-cols .c {
+  position: absolute;
+}
+
+.af-two-cols > .inner {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.af-two-cols .group-block {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.af-two-cols .group-block.group-1 {
+  left: 0;
+  border-right: 2px solid #fff;
+}
+
+.af-two-cols .group-block.group-2 {
+  right: 0;
+  border-left: 2px solid #fff;
+}
+
+.af-two-cols .product-info {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.af-two-cols .product-info > .group {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.af-two-cols .product-info .title {
+  position: relative;
+  top: 35%;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.af-two-cols .product-info .title.pic {
+  max-width: 100%;
+}
+
+.af-two-cols .product-info .title.pic > img {
+  max-width: 100%;
+}
+
+.af-two-cols .product-info .slogan {
+  position: relative;
+  top: 39%;
+  text-align: center;
+  font-size: 1.15em;
+  line-height: 1.5;
+}
+
+.af-two-cols .product-info .summary {
+  text-align: center;
+  font-size: 3.25em;
+  display: none;
+}
+
+.af-two-cols .product-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.af-two-cols .product-img > img,
+.af-two-cols .product-img .pic > img {
+  width: 100%;
+}
+
+/* 垂直置中 */
+.af-vc-wrap:after, .af-hero.hero-layout-5 .group-block.group-2:after, .af-hero.hero-layout-5 .group-block .cover-image:after, .layout-1 .group-block .cover-image:after, .layout-3.af-hero .group-2:after {
+  content: "";
+  margin-left: -0.25em;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 0px;
+}
+
+.af-vc-wrap .af-vc-ele, .af-hero.hero-layout-5 .group-block.group-2 .af-vc-ele, .af-hero.hero-layout-5 .group-block .cover-image .af-vc-ele, .layout-1 .group-block .cover-image .af-vc-ele, .layout-3.af-hero .group-2 .af-vc-ele, .af-vc-wrap .af-hero.hero-layout-5 .group-block .cover-image, .af-hero.hero-layout-5 .group-block .af-vc-wrap .cover-image, .af-hero.hero-layout-5 .group-block.group-2 .cover-image, .af-hero.hero-layout-5 .group-block .cover-image .cover-image, .af-hero.hero-layout-5 .group-block .af-vc-wrap .cover-image > img, .af-hero.hero-layout-5 .group-block .cover-image > img, .af-hero.hero-layout-5 .group-block .layout-3.af-hero .group-2 .cover-image > img, .layout-1 .group-block .af-vc-wrap .cover-image > img, .layout-1 .group-block .cover-image > img, .layout-1 .group-block .layout-3.af-hero .group-2 .cover-image > img, .layout-3.af-hero .group-2 .cover-image {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.af-part {
+  position: relative;
+  width: 100%;
+}
+
+.af-part > .link-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.af-part > .inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 浮空置中 */
+.pic.poa.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* 一般置中 */
+.pic.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1180px) {
+  .layout-1.full-width .group-2 .cover-image > img {
+    max-width: 120%;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .af-part.af-hero:after {
+    padding-top: 60% !important;
+  }
+  .hero-layout-4:after {
+    padding-top: 0 !important;
+  }
+  .hero-layout-4 .title {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .hero-layout-4 .slogan {
+    /* 加0.5 */
+    font-size: 2em;
+  }
+  .hero-layout-4 .summary {
+    font-size: 1.5em;
+  }
+  .hero-layout-4 .cover-image {
+    text-align: center;
+    height: 100%;
+  }
+  .hero-layout-4 .cover-image > img {
+    max-height: 100%;
+    max-width: 100%;
+    margin-bottom: -5%;
+    position: relative;
+    bottom: -10%;
+  }
+  .layout-1.af-hero .group-block .cover-image > img {
+    max-width: inherit;
+  }
+  .layout-2 .cover-image {
+    width: 80%;
+  }
+  .layout-2 .slogan {
+    width: 60%;
+  }
+  .layout-4 .group-block .cover-image > img {
+    width: 110%;
+  }
+  .layout-4 .slogan {
+    line-height: 1.4;
+  }
+  .layout-4 .summary {
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .af-part {
+    font-size: 1.5vw;
+  }
+  .layout-1.full-width .cover-image img {
+    position: relative;
+    top: 0;
+  }
+  .layout-3 .group-block .slogan {
+    line-height: 1.4;
+  }
+  /* af-two-cols */
+  .af-two-cols {
+    max-height: 430px;
+    overflow: hidden;
+  }
+  .af-two-cols:after {
+    padding-top: 45%;
+  }
+  .af-two-cols .product-info,
+  .af-two-cols .product-img {
+    width: 100%;
+  }
+  .af-two-cols .product-info {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    min-height: 25%;
+    max-height: 25%;
+    padding-top: 8%;
+  }
+  .af-two-cols .product-info .title {
+    line-height: 1.5;
+    margin-bottom: .5em;
+  }
+  .af-two-cols .product-info .slogan {
+    line-height: 1.5em;
+    margin-bottom: 1em;
+  }
+  .af-two-cols .product-img {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+  }
+  .af-part.hero-layout-3 {
+    /* IN */
+  }
+  .af-part.hero-layout-3 .group-block.group-1,
+  .af-part.hero-layout-3 .group-block.group-2 {
+    right: 1%;
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .af-hero.hero-layout-1 {
+    max-height: 100%;
+    font-size: 3vw;
+    /* 上下顛倒 */
+  }
+  .af-hero.hero-layout-1.af-part > .inner {
+    position: relative;
+    padding-top: 40%;
+  }
+  .af-hero.hero-layout-1:after {
+    padding-top: 0px;
+  }
+  .af-hero.hero-layout-1 .group-block {
+    position: relative;
+    width: 100%;
+  }
+  .af-hero.hero-layout-1 .group-block.group-1, .af-hero.hero-layout-1 .group-block.group-2 {
+    width: 100%;
+  }
+  .af-hero.hero-layout-1 .group-block.group-1 .title, .af-hero.hero-layout-1 .group-block.group-2 .title {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  .af-hero.hero-layout-1 .group-block.group-1 .title.pic, .af-hero.hero-layout-1 .group-block.group-2 .title.pic {
+    width: 40%;
+    margin: 0 auto;
+  }
+  .af-hero.hero-layout-1 .group-block.group-1 .slogan, .af-hero.hero-layout-1 .group-block.group-2 .slogan {
+    margin: 4% auto 1em;
+  }
+  .af-hero.hero-layout-1 .group-block.group-1 .summary, .af-hero.hero-layout-1 .group-block.group-2 .summary {
+    font-size: 1.25em;
+  }
+  .af-hero.hero-layout-1 .group-block.group-1 {
+    padding: 2% 0%;
+    left: 0;
+    top: 0;
+  }
+  .af-hero.hero-layout-1 .group-block.group-2 {
+    position: relative;
+    right: 0;
+    padding-top: 10%;
+  }
+  .af-hero.hero-layout-1 .group-block .cover-image > img {
+    width: 100%;
+    top: 0;
+  }
+  .af-hero.hero-layout-1 > .inner {
+    padding-top: 55%;
+    position: relative;
+  }
+  .af-hero.hero-layout-1 > .inner .group-2 {
+    position: absolute;
+    top: 5%;
+    height: auto;
+  }
+  .af-hero.hero-layout-2 {
+    min-height: 455px;
+  }
+  .af-hero.hero-layout-2 .inner {
+    height: 100%;
+    padding-top: 10%;
+  }
+  .af-hero.hero-layout-2 .group-block.group-1,
+  .af-hero.hero-layout-2 .group-block.group-2 {
+    position: relative;
+    width: 100%;
+  }
+  .af-hero.hero-layout-2 .group-block.group-1 .title.pic,
+  .af-hero.hero-layout-2 .group-block.group-2 .title.pic {
+    width: 60%;
+  }
+  .af-hero.hero-layout-2 .group-block.group-1 {
+    left: inherit;
+  }
+  .af-hero.hero-layout-2 .group-block.group-2 {
+    margin-top: 1em;
+    top: 0;
+    right: inherit;
+  }
+  .af-hero.hero-layout-3 {
+    /* IN */
+  }
+  .af-hero.hero-layout-3 .group-block.group-1,
+  .af-hero.hero-layout-3 .group-block.group-2 {
+    position: relative;
+  }
+  .af-hero.hero-layout-3 .group-block.group-1 .cover-image > img,
+  .af-hero.hero-layout-3 .group-block.group-2 .cover-image > img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .af-hero.hero-layout-3 .group-block.group-2 {
+    top: 0;
+  }
+  .af-hero.hero-layout-4 {
+    padding-bottom: 0;
+  }
+  .af-hero.hero-layout-4:after {
+    padding-top: 0 !important;
+  }
+  .af-hero.hero-layout-4 .title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .af-hero.hero-layout-4 .slogan {
+    font-size: 1.5em;
+  }
+  .af-hero.hero-layout-4 .summary {
+    font-size: 1em;
+    width: 80%;
+  }
+  .af-hero.hero-layout-4 .title {
+    width: 80%;
+  }
+  .af-hero.hero-layout-4 .group-block.group-1 {
+    padding-top: 0%;
+  }
+  .af-hero.hero-layout-4 .group-block.group-2 {
+    position: relative;
+    min-height: 200px;
+  }
+  .af-hero.hero-layout-4 .cover-image > img {
+    bottom: 0;
+  }
+  .af-part {
+    min-width: inherit;
+    min-width: auto;
+    font-size: 3vw;
+  }
+  .af-part.layout-base .group-block .item {
+    position: inherit;
+    top: 0;
+  }
+  .af-part.af-two-cols .product-info .title,
+  .af-part.af-two-cols .product-info .slogan,
+  .af-part.af-two-cols .product-info .summary {
+    top: 0;
+  }
+  .af-part.af-hero {
+    padding: 40px 3% 5%;
+    box-sizing: border-box;
+    min-height: inherit;
+    max-height: 100%;
+  }
+  .af-part.af-hero > .inner {
+    position: relative;
+    padding-top: 10%;
+  }
+  .af-part.af-hero:after {
+    content: none;
+  }
+  .af-part.af-hero:after {
+    padding-top: 0px;
+  }
+  .af-part.af-hero .group-block {
+    position: relative;
+  }
+  .af-part.af-hero .group-block.group-1, .af-part.af-hero .group-block.group-2 {
+    width: 100%;
+  }
+  .af-part.af-hero .group-block .title.pic {
+    width: 60%;
+    margin-bottom: 1em;
+  }
+  .af-part.af-hero .group-block .slogan {
+    margin-bottom: 1em;
+  }
+  .af-part.af-hero .group-block .slogan.pic {
+    width: 60%;
+  }
+  .af-part.af-hero .group-block .cover-image {
+    margin-top: 5%;
+  }
+  .af-part.af-hero .group-block .cover-image > img {
+    width: 100%;
+    height: auto;
+  }
+  .af-part .group-block.group-1,
+  .af-part .group-block.group-2 {
+    padding-top: 8%;
+  }
+  .af-part .group-block.group-1 .title,
+  .af-part .group-block.group-1 .slogan,
+  .af-part .group-block.group-1 .summary,
+  .af-part .group-block.group-2 .title,
+  .af-part .group-block.group-2 .slogan,
+  .af-part .group-block.group-2 .summary {
+    margin-bottom: 10px;
+  }
+  /* Layout-1 */
+  .layout-1 {
+    padding: 5% 3% 5%;
+    box-sizing: border-box;
+    max-height: 100%;
+  }
+  .layout-1 > .inner {
+    position: relative;
+  }
+  .layout-1:after {
+    padding-top: 0px;
+  }
+  .layout-1 .group-block {
+    position: relative;
+  }
+  .layout-1 .group-block.group-1, .layout-1 .group-block.group-2 {
+    width: 100%;
+  }
+  .layout-1 .group-block .title.pic {
+    width: 40%;
+    margin-bottom: 1em;
+  }
+  .layout-1 .group-block .slogan {
+    margin-bottom: 1em;
+  }
+  .layout-1 .group-block .slogan.pic {
+    width: 60%;
+  }
+  .layout-1 .group-block .cover-image {
+    margin-top: 5%;
+  }
+  .layout-1 .group-block .cover-image > img {
+    width: 100%;
+    height: auto;
+  }
+  /* Layout-2 */
+  .layout-2 {
+    padding: 10% 3% 5%;
+    box-sizing: border-box;
+  }
+  .layout-2 > .inner {
+    position: relative;
+  }
+  .layout-2:after {
+    padding-top: 0px;
+  }
+  .layout-2 .group-block {
+    position: relative;
+    width: 100%;
+  }
+  .layout-2 .title {
+    width: 60%;
+    margin-bottom: 1em;
+  }
+  .layout-2 .slogan {
+    margin-bottom: 1em;
+    width: 80%;
+  }
+  .layout-2 .slogan.text {
+    font-size: 1.6em;
+    line-height: 1.5;
+  }
+  .layout-2 .cover-image {
+    padding: 10% 5% 10%;
+  }
+  /* Layout-3 */
+  .layout-3 {
+    max-height: 100%;
+    font-size: 3vw;
+  }
+  .layout-3 > .inner {
+    position: relative;
+  }
+  .layout-3:after {
+    padding-top: 0px;
+  }
+  .layout-3 .group-block {
+    padding: 10% 5% 5%;
+    position: relative;
+    width: 100%;
+  }
+  .layout-3 .group-block.group-1 .title, .layout-3 .group-block.group-2 .title {
+    margin-bottom: 1em;
+  }
+  .layout-3 .group-block.group-1 .slogan, .layout-3 .group-block.group-2 .slogan {
+    margin: 4% auto 1em;
+  }
+  .layout-3 .group-block.group-1 .summary, .layout-3 .group-block.group-2 .summary {
+    font-size: 1.25em;
+  }
+  .layout-3 .group-block.group-1 .cover-image > img, .layout-3 .group-block.group-2 .cover-image > img {
+    width: 100%;
+    top: 0;
+  }
+  .layout-3 .group-block.group-2 {
+    padding-top: 2%;
+  }
+  /* Layout-4 */
+  .layout-4 {
+    max-height: 100%;
+    font-size: 3vw;
+    /* 上下顛倒 */
+  }
+  .layout-4 > .inner {
+    position: relative;
+  }
+  .layout-4:after {
+    padding-top: 0px;
+  }
+  .layout-4 .group-block {
+    padding: 10% 5% 5%;
+    position: relative;
+    width: 100%;
+  }
+  .layout-4 .group-block.group-1, .layout-4 .group-block.group-2 {
+    width: 100%;
+  }
+  .layout-4 .group-block.group-1 .item, .layout-4 .group-block.group-2 .item {
+    position: relative;
+  }
+  .layout-4 .group-block.group-1 .title, .layout-4 .group-block.group-2 .title {
+    margin-bottom: 1em;
+  }
+  .layout-4 .group-block.group-1 .slogan, .layout-4 .group-block.group-2 .slogan {
+    margin: 4% auto 1em;
+  }
+  .layout-4 .group-block.group-1 .summary, .layout-4 .group-block.group-2 .summary {
+    font-size: 1.25em;
+    line-height: 1.4;
+  }
+  .layout-4 .group-block.group-1 {
+    padding: 2% 0%;
+  }
+  .layout-4 .group-block.group-2 {
+    padding-top: 2%;
+  }
+  .layout-4 .group-block .cover-image > img {
+    width: 100%;
+  }
+  .layout-4 > .inner {
+    padding-top: 50%;
+    position: relative;
+  }
+  .layout-4 > .inner .group-2 {
+    position: absolute;
+    top: 5%;
+    height: auto;
+  }
+  /* Layout-5 */
+  .layout-5 {
+    max-height: 100%;
+    /* 上下顛倒 */
+  }
+  .layout-5 > .inner {
+    position: relative;
+  }
+  .layout-5:after {
+    padding-top: 0px;
+  }
+  .layout-5 .group-block {
+    padding: 10% 5% 5%;
+    position: relative;
+    width: 100%;
+  }
+  .layout-5 .group-block.group-1, .layout-5 .group-block.group-2 {
+    width: 100%;
+  }
+  .layout-5 .group-block.group-1 .item, .layout-5 .group-block.group-2 .item {
+    position: relative;
+  }
+  .layout-5 .group-block.group-1 .title, .layout-5 .group-block.group-2 .title {
+    margin-bottom: 1em;
+  }
+  .layout-5 .group-block.group-1 .slogan, .layout-5 .group-block.group-2 .slogan {
+    margin: 4% auto 1em;
+  }
+  .layout-5 .group-block.group-1 .summary, .layout-5 .group-block.group-2 .summary {
+    font-size: 1.25em;
+  }
+  .layout-5 .group-block.group-1 {
+    padding: 2% 0%;
+  }
+  .layout-5 .group-block.group-2 {
+    padding-top: 2%;
+  }
+  .layout-5 .group-block .cover-image > img {
+    width: 100%;
+    top: 0;
+  }
+  .layout-5 > .inner {
+    padding-top: 55%;
+    position: relative;
+  }
+  .layout-5 > .inner .group-2 {
+    position: absolute;
+    top: 5%;
+    height: auto;
+  }
+  /* Layout-6 */
+  .layout-6 {
+    max-height: 100%;
+    font-size: 3vw;
+    /* 上下顛倒 */
+  }
+  .layout-6 > .inner {
+    position: relative;
+  }
+  .layout-6:after {
+    padding-top: 0px;
+  }
+  .layout-6 .group-block {
+    padding: 10% 5% 5%;
+    position: relative;
+    width: 100%;
+  }
+  .layout-6 .group-block.group-1, .layout-6 .group-block.group-2 {
+    width: 100%;
+  }
+  .layout-6 .group-block.group-1 .item, .layout-6 .group-block.group-2 .item {
+    position: relative;
+  }
+  .layout-6 .group-block.group-1 .title, .layout-6 .group-block.group-2 .title {
+    margin-bottom: 1em;
+  }
+  .layout-6 .group-block.group-1 .slogan, .layout-6 .group-block.group-2 .slogan {
+    margin: 4% auto 1em;
+  }
+  .layout-6 .group-block.group-1 .summary, .layout-6 .group-block.group-2 .summary {
+    font-size: 1.25em;
+  }
+  .layout-6 .group-block.group-1 {
+    padding: 2% 0%;
+  }
+  .layout-6 .group-block.group-2 {
+    padding-top: 2%;
+  }
+  .layout-6 .group-block .cover-image {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .layout-6 .group-block .cover-image > img {
+    width: 100%;
+    top: 0;
+  }
+  .layout-6 > .inner {
+    padding-top: 55%;
+    position: relative;
+  }
+  .layout-6 > .inner .group-2 {
+    position: absolute;
+    top: 5%;
+    height: auto;
+  }
+  /* af-two-cols */
+  .af-two-cols {
+    max-height: initial;
+    font-size: 2.5vw;
+    border-top: 0px;
+  }
+  .af-two-cols:after {
+    padding-top: 0px;
+  }
+  .af-two-cols > .inner {
+    position: relative;
+  }
+  .af-two-cols .group-block {
+    position: relative;
+    width: 100%;
+    border: 0px;
+    border-top: 3px solid #fff;
+    overflow: hidden;
+  }
+  .af-two-cols .group-block.group-1 {
+    border-right: 0px;
+  }
+  .af-two-cols .group-block.group-2 {
+    border-left: 0px;
+  }
+  .af-two-cols .product-info,
+  .af-two-cols .product-img {
+    width: 100%;
+  }
+  .af-two-cols .product-img {
+    width: 90%;
+    margin: 1% auto -10%;
+  }
+  .af-two-cols .product-info .title {
+    font-size: 2.5em;
+    margin-bottom: 0;
+  }
+  .af-two-cols .product-info .slogan {
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .af-part {
+    font-size: 1.25vw;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .af-part {
+    font-size: 20px;
+  }
+}
+
+/* ------------- Pages ---------------- */
+/** ___  產品頁 spec 修正  ____________________________________________
+ * 
+ *    首頁重新刻結構
+ * ___________________________________________________________ */
+@media only screen and (max-width: 720px) {
+  /* 720 */
+  #specifications .spec-item {
+    display: block;
+    line-height: 1.5;
+    width: 100%;
+  }
+  #specifications .spec-data {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    /* for rtl lang */
+    box-sizing: border-box;
+  }
+}
+
+/** ___  About  ____________________________________________
+ * 
+ *    關於我們之類的內頁
+ * ___________________________________________________________ */
+#main-zone {
+  /* 用來加權重 */
+}
+
+#main-zone .member-func {
+  padding-bottom: 1.5em;
+  margin-bottom: 1.8em;
+}
+
+#main-zone .member-func .member-func-title {
+  font-size: 18px;
+  color: #000;
+}
+
+#main-zone .member-func a {
+  font-size: 13px;
+  color: #777;
+}
+
+#main-zone .member-func a:hover {
+  color: #00a8ff;
+}
+
+#main-zone .member-func li {
+  padding: 4px 0;
+  margin-bottom: 1px;
+}
+
+/** ___  Commercial  ____________________________________________
+ * 
+ *    Commercial
+ * ___________________________________________________________ */
+/* local自行編輯區 */
+.cmc-customized-footer p {
+  margin-bottom: 1.5em;
+}
+
+.cmc-customized-footer a {
+  line-height: 1.2;
+}
+
+/* ------------- RWD ---------------- */
+/** ___  RWD Desktop  ____________________________________________ **/
+/* 額外處理 */
+@media only screen and (min-width: 1380px) {
+  #af-container > .action-area.l__grid-1x2 .bg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* 最大桌面寬(1170)之前 */
+@media only screen and (max-width: 1170px) {
+  .af-inner {
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* ----------------- Footer ----------------- */
+  #af-footer .col-wrapper {
+    width: 98%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  #af-container > .action-area {
+    height: 210px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #af-container > .action-area {
+    height: 180px;
+  }
+}
+
+/** ___  RWD Tablet  ____________________________________________ **/
+@media only screen and (max-width: 1169px) {
+  /* < 1169 */
+  #searchresults{
+    width: 94%;
+  }
+  #af-header .af-inner {
+    padding: 0;
+  }
+  #af-header .af-inner .logo {
+    margin-left: 20px;
+  }
+  #af-header .af-inner .sub-area {
+    min-width: inherit;
+    min-width: initial;
+    padding-right: 10px;
+  }
+  #af-header .af-inner .nav-member .member-item {
+    margin-right: 0;
+  }
+  #af-header .af-inner .search-bar .btn {
+    left: 5%;
+  }
+  #af-header .af-inner .search-bar .icon.icon-close{
+    right: 3%;
+  }
+  #af-header .af-inner .search-bar .btn .icon {
+    background-position: 0 0;
+  }
+  #af-header .af-inner .nav-main li:first-child {
+    margin-left: 30px;
+  }
+  #af-header .af-inner .nav-main li + li {
+    margin-left: 30px;
+  }
+  #af-header .af-inner .nav-member .member-item.not-login > a {
+    text-align: center;
+  }
+  #af-header .af-inner .search-bar > .input-search {
+    width: 95%;
+  }
+  #af-header .af-inner .search-bar.active > .input-search {
+    width: 200px;
+    border-width: 1px;
+  }
+  #af-header .nav-bar .submenu-area .products-menu {
+    left: 100px;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu {
+    left: 186px;
+  }
+  #af-header .nav-bar .submenu-area .commercial-menu {
+    left: 300px;
+  }
+  #af-header .nav-bar .submenu-area .service-menu {
+    left: 414px;
+  }
+  #af-header .nav-bar .submenu-area .store-menu {
+    left: 524px;
+  }
+  #af-header .af-inner .sub-area .nav-member .sub-block {
+    left: 0;
+    top: 60px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  /* < 1170 */
+  #af-header.aai-bg-black .af-inner .search-bar > .input-search {
+    background: none;
+  }
+  #af-header .af-inner .nav-member .member-item {
+    position: inherit;
+  }
+  #af-header .nav-bar .submenu-area {
+    width: 100%;
+    max-width: 100%;
+  }
+  #af-header .nav-bar .submenu-area .submenu {
+    margin-right: auto;
+    left: 0 !important;
+    width: 100% !important;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu {
+    min-width: 800px;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu .more-btn {
+    right: 20px;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu.three-column .hot-list {
+    padding: 0;
+    width: 50%;
+    padding: 0 3%;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu:before {
+    display: none;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu .hot-list + .hot-list {
+    width: 24% !important;
+  }
+  #af-header .nav-bar .submenu-area .products-menu > .display-area .sub-cat-list .sub-item {
+    padding: 0;
+  }
+  #af-header .nav-bar .submenu-area .products-menu > .display-area .sub-cat-list:after {
+    content: none;
+  }
+  #af-header .nav-bar .submenu-area .products-menu > .display-area .sub-cat-list .sub-group {
+    width: 40%;
+  }
+  #af-header .nav-bar .submenu-area .products-menu > .display-area .sub-cat-list .right-column .sub-group {
+    width: 100%;
+  }
+  #af-header .nav-bar .submenu-area .products-menu .highlight {
+    display: none;
+  }
+  #af-header .nav-bar .submenu-area #af-container > .part-3 {
+    height: 445px;
+  }
+  #af-header .nav-bar .submenu-area #af-container > .part-3 .group-block {
+    height: 445px;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  /* 1020 */
+  #af-header .nav-bar .submenu-area .hot-menu.three-column .hot-list {
+    padding: 0 2% 0% 1.5%;
+  }
+  #asus-api-footer .aai-inner {
+    min-width: 100%;
+  }
+  #af-header .af-inner .search-bar .btn .icon {
+    background-position: 0 0;
+  }
+  .af-two-cols .product-info .title,
+  .af-two-cols .product-info .slogan {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  /* 900 */
+  #af-header .nav-bar .submenu-area .hot-menu.three-column .hot-list {
+    padding: 0 1%;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu.three-column:before {
+    content: none;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item.first {
+    width: 366px;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item {
+    width: 153px;
+  }
+  #af-header .nav-bar .submenu-area .hot-menu .hot-list .hot-item + .hot-item {
+    padding: 0px 10.5px 16px 0.5px;
+  }
+}
+
+/** ___  RWD Mobile  ____________________________________________ **/
+
+/* icr-sticker style */
+@media only screen and (max-width: 768px) {
+  #online-service {
+    padding: 6px 10px;
+    right: 20px;
+    bottom: 105px;
+  }
+  #online-service::after {
+    right: 16px;
+    bottom: -3px;
+  }
+
+  #online-service .icon {
+    margin-right: 0;
+  }
+  #online-service p {
+    display: none;
+  }
+}
+
+
+/* 手機全吃 */
+@media only screen and (max-width: 720px) {
+  /* 720 */
+  /* #### */
+  .af-inner {
+    width: 100%;
+  }
+  #af-header {
+    min-width: auto;
+    min-height: auto;
+    min-width: initial;
+    min-height: initial;
+    height: 40px;
+  }
+  #af-container {
+    -webkit-transition: all 0.4s cubic-bezier(0.8, 0.395, 0.06, 0.81);
+    -moz-transition: all 0.4s cubic-bezier(0.8, 0.395, 0.06, 0.81);
+    -o-transition: all 0.4s cubic-bezier(0.8, 0.395, 0.06, 0.81);
+    transition: all 0.4s cubic-bezier(0.8, 0.395, 0.06, 0.81);
+  }
+  /* ----------------- Menu ----------------- */
+  #af-header .af-inner .logo {
+    position: absolute;
+    left: 50%;
+    width: 107px;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-left: -46px;
+    height: 100%;
+    float: none;
+    background-position: 0 center;
+  }
+  /* 選單統一設置 */
+  #af-header .nav-bar {
+    padding-top: 60px;
+    position: fixed;
+    width: 80%;
+    left: -80%;
+    height: 100%;
+    background: #484848;
+  }
+  /* ----------------- Action area ----------------- */
+  #af-container > .action-area {
+    height: auto;
+    border-top: 0px;
+    border-bottom: 2px solid #fff;
+  }
+  #af-container > .action-area .block {
+    height: 300px;
+    border: 0px;
+    border-top: 4px solid #fff;
+    float: none;
+  }
+  #af-container > .action-area .block + .block {
+    border-left: 0px;
+  }
+  /* ----------------- Footer ----------------- */
+  #af-footer {
+    min-width: 100%;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  #af-footer .af-inner {
+    padding: 0;
+  }
+  #af-footer .col-wrapper {
+    width: 100%;
+    border-bottom: 0px;
+  }
+  #af-footer .col-wrapper .col-item {
+    /*background: #cf0;*/
+    box-sizing: border-box;
+  }
+  #af-footer .col-wrapper .col-item > .title {
+    border-top: 1px solid #C1C1C1;
+    height: 60px;
+    padding: 0 3%;
+    line-height: 60px;
+  }
+  #af-footer .col-wrapper .col-item:first-child .title {
+    border-top: 0px;
+  }
+  #af-footer .col-wrapper .col-item:last-child .title {
+    border-bottom: 1px solid #C1C1C1;
+  }
+  #af-footer .col-wrapper .col-item:active:last-child .title,
+  #af-footer .col-wrapper .col-item .title.show-menu {
+    border-bottom: 0px;
+  }
+  #af-footer .af-footer-nav {
+    margin: 0;
+    height: 0px;
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  #af-footer .af-footer-nav li {
+    height: 60px;
+    display: table;
+    width: 100%;
+  }
+  #af-footer .af-footer-nav li a {
+    width: 100%;
+    display: table-cell;
+    padding: 0 3%;
+    vertical-align: middle;
+    background: #EAEAEA;
+  }
+  #af-footer .af-footer-nav li + li {
+    border-top: 1px solid #E2E2E2;
+  }
+  #af-footer .af-footer-nav .divider-vertical {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    display: none;
+  }
+  #af-footer .af-footer-nav .aai-social-media {
+    background: #eaeaea;
+  }
+  #af-footer .af-footer-nav .aai-social-media a {
+    float: left;
+    width: auto;
+    margin-top: 10px;
+  }
+  #af-footer .af-footer-nav .aai-social-media:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  #af-footer .global-block {
+    padding: 1% 3%;
+    height: auto;
+  }
+  #af-footer .global-block .extra-link {
+    float: none;
+    margin-bottom: 10px;
+  }
+  #af-footer .global-block .copyright {
+    float: none;
+  }
+  #af-footer .global-block .copyright .links {
+    display: block;
+  }
+  #af-footer .global-block .copyright .links a {
+    display: block;
+    margin: 0px;
+  }
+  #af-footer .change-web {
+    display: block;
+    margin: 10px 0px;
+  }
+  #af-footer .change-web a {
+    padding-right: 20px;
+  }
+  #af-footer .change-web a:link, #af-footer .change-web a:visited {
+    color: #0096ff;
+  }
+  #af-footer .mobile-menu.show-submenu .af-footer-nav,
+  #af-footer .col-item > .title:active + .af-footer-nav,
+  #af-footer .col-item > .af-footer-nav:active {
+    height: auto;
+  }
+  #asus-api-footer #extra_link {
+    float: none;
+  }
+  #asus-api-footer #aai-copyright {
+    float: none;
+    text-align: center;
+  }
+  #asus-api-footer #aai-copyright a {
+    border-right: 0px;
+  }
+  #asus-api-footer #aai-copyright #copyright {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #af-container > .action-area .block {
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #af-container > .action-area .block {
+    height: 150px;
+  }
+}
+
+/** ___  RWD Other  ____________________________________________ **/
+/* 拿來算高度用的 */
+.checkHeight {
+  visibility: hidden;
+  display: block;
+  position: absolute;
+}
+
+/* ------------- IE fix ---------------- */
+/* ------------- AFE ---------------- */
+/** ___  PART ASUS Framework effect  ____________________________________________
+ * 
+ *    一些自己刻的特效樣式
+ * ___________________________________________________________ */
+.afe.slide-sidebar {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background: #484848;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  position: fixed;
+  top: 0;
+  left: -80%;
+  padding-top: 0px;
+  height: 100%;
+  background: #484848;
+  width: 80% !important;
+  box-sizing: border-box;
+}
+
+/* 開啟側邊欄 */
+.show-slide-sidebar .afe.afe-container {
+  -webkit-transform: translateX(80%);
+  -moz-transform: translateX(80%);
+  -ms-transform: translateX(80%);
+  -o-transform: translateX(80%);
+  transform: translateX(80%);
+}
+
+.show-slide-sidebar .afe.slide-sidebar {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.afe.zindex0 {
+  z-index: 10000;
+}
+
+/* ------------- MDA ---------------- */
+#MDA .MDA2015 {
+  margin-left: 20px;
+}
+
+/* ------------- Overwrite ---------------- */
+/** ___  Overwrite  ____________________________________________ **/
+.btn {
+  border: 0px;
+  padding: initial;
+  text-shadow: none;
+  background: initial;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: none;
+  -moz-border-radius: none;
+  border-radius: none;
+}
+
+.btn-asus:link,
+.btn-asus:visited {
+  color: #FFF;
+}
+
+.btn:hover {
+  background: initial;
+}
+
+.nav {
+  margin-bottom: 0;
+}
+
+body #asus-api-footer,
+body #asus-api-footer.aai-maxi-w .aai-inner {
+  min-width: 784px;
+  margin-top: 1px;
+}
+
+body #asus-api-footer {
+  border-top: 3px solid #fff;
+  padding: 0;
+}
+
+/* black-page */
+body #asus-api-footer.aai-bg-black .aai-footer-span h4 {
+  color: #d8d8d8;
+}
+
+body #asus-api-footer.aai-bg-black .aai-fnav li > a:hover {
+  color: #d8d8d8;
+}
+
+#af-header ul,
+#af-header ol {
+  margin: 0;
+}
+
+#af-header .main-area .nav > li {
+  margin: 0;
+}
+
+#af-header p {
+  margin: 0px 0px 10px;
+}
+
+#af-header .search-bar .btn {
+  right: 4px;
+  top: -2px;
+}
+
+body #asus-api-footer.aai-maxi-w,
+body #asus-api-footer.aai-maxi-w .aai-inner {
+  background-color: #F1F1F1;
+}
+
+body #asus-api-footer.aai-bg-black,
+body #asus-api-footer.aai-bg-black .aai-inner {
+  background-color: #242424;
+}
+
+#asus-api-footer .aai-fnav li > a {
+  font-size: 13px;
+  /*line-height: 1.8em;*/
+}
+
+/* 內頁需要蓋回來 */
+#main-zone .btn {
+  padding: 4px 14px;
+}
+
+#af-header h1, #af-footer h1,
+#af-header h2, #af-footer h2,
+#af-header h3, #af-footer h3,
+#af-header h4, #af-footer h4,
+#af-header h5, #af-footer h5,
+#af-header h6, #af-footer h6 {
+  margin: 0;
+  font-size: initial;
+  font-weight: inherit;
+}
+
+#main-zone {
+  font-size: 12px;
+  line-height: 20px;
+  color: #333;
+}
+
+#main-zone #overview-top-nav.poa {
+  top: 61px;
+}
+
+/* 修正產品內頁 */
+body #product-home > .row {
+  padding-top: 25px;
+}
+
+body #product-home > .row .radio input[type="radio"] {
+  float: left;
+  margin-left: -18px;
+}
+
+/* 修正產品首頁問題 */
+#product-home .btn-adv.hide {
+  display: inline-block !important;
+  margin-top: 40px;
+  margin-bottom: -10px;
+  color: #FFF;
+}
+
+.category-hotproduct > a, .hot-product-unit > a {
+  color: #333;
+  text-align: center;
+}
+
+/* 因為共用圖片，統一提昇基本大小後，舊版的需要鎖尺寸 */
+.span3-hot-product .category-image {
+  max-width: 190px;
+}
+
+@media (min-width: 720px) and (max-width: 959px) {
+  .part .pic img {
+    max-width: inherit !important;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #af-header .btn {
+    padding: inherit;
+    background: inherit;
+  }
+  body #asus-api-footer, body #asus-api-footer.aai-maxi-w .aai-inner {
+    min-width: auto;
+    min-width: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border: 0px;
+  }
+  body.d-mobile {
+    overflow-x: hidden !important;
+  }
+  body #asus-api-footer .aai-fmiddle {
+    padding: 0;
+  }
+  #asus-api-footer.aai-bg-black .aai-footer-span {
+    padding: 0 5px;
+    border-bottom: 1px solid #575757;
+    box-sizing: border-box;
+  }
+  body #asus-api-footer .aai-fbootom {
+    padding: 0 3px;
+  }
+  body #asus-api-footer .aai-footer-span:first-child {
+    margin-top: 20px;
+  }
+  #af-header #viewed-list > div,
+  #af-header #div_compare_panel > div {
+    height: inherit !important;
+    overflow: hidden !important;
+  }
+  #main-zone #overview-top-nav.poa {
+    top: 0;
+  }
+  #product_content_area img {
+    max-width: 100%;
+  }
+  #overview #sectionOverview {
+    width: 100%;
+  }
+  #overview #sectionOverview img,
+  #overview #old-sectionOverview img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 959px) and (min-width: 720px) {
+  body #asus-api-footer .aai-fnav li > a {
+    padding: 0;
+  }
+}
+
+#asus-api-footer .aai-social-media > a {
+  position: relative;
+  display: inline-block;
+}
+
+#asus-api-footer .aai-social-media > a:hover:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
+}

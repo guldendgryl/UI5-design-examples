@@ -1,0 +1,225 @@
+/*ADMİNDASHBOARD*/
+
+.container {
+    width: 100%;
+    background-color: rgb(110, 64, 235);
+}
+
+.left-content {
+    width: 35% !important;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.avatar {
+    padding: 1rem !important;
+}
+
+.user-info {
+    padding-top: 2rem !important;
+    padding-left: 1rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.user-name {
+    font-weight: bold !important;
+}
+
+.user-job {
+    color: rgb(170, 169, 169) !important;
+    font-size: 12px !important;
+}
+
+.left-content-box {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: .5rem !important;
+}
+
+.box-title {
+    color: rgb(95, 93, 93) !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    padding-left: 1rem !important;
+    width: 100% !important;
+}
+
+.buton {
+    margin-left: 2rem !important;
+    width: 150px !important;
+}
+
+.blue-logo {
+    border-radius: 2px !important;
+    background-color: aqua !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin-right: 1rem !important;
+}
+
+.right-content-title {
+    font-weight: bold !important;
+    color: gray !important;
+    margin-top: .5rem !important;
+}
+
+.right-content-box {
+    border-radius: 2px !important;
+    background-color: aqua !important;
+    width: 250px !important;
+    height: 230px !important;
+    margin: 1rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+}
+
+.circle-box {
+    position: relative !important;
+}
+
+.circle {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 100% !important;
+    opacity: 0.1 !important;
+    background-color: white !important;
+    position: absolute !important;
+    margin-left: 150px !important;
+    animation: circle 15s linear infinite !important;
+    border-radius: 100% !important;
+    margin-right: .1rem !important;
+    margin-top: 2rem !important;
+}
+
+.circle2 {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 100% !important;
+    opacity: 0.2 !important;
+    background-color: white !important;
+    position: absolute !important;
+    margin-left: 110px !important;
+    margin-right: .1rem !important;
+    margin-top: 2rem !important;
+    animation: circle 15s linear infinite;
+}
+
+.stock-total {
+    position: absolute !important;
+    float: left !important;
+    margin-left: 2rem !important;
+    z-index: 1;
+}
+
+@keyframes circle {
+    0% {
+        top: 0px;
+        bottom: 100px;
+    }
+    25% {
+        top: 90px;
+        bottom: 0px;
+    }
+    50% {
+        top: 0px;
+        bottom: 0px;
+    }
+    75% {
+        top: 0px;
+        bottom: 0px;
+    }
+    100% {
+        top: 100px;
+        bottom: 0px;
+    }
+}
+
+@keyframes circle2 {
+    0% {
+        top: 0px;
+        bottom: 100px;
+    }
+    25% {
+        top: 0px;
+        bottom: 0px;
+    }
+    50% {
+        top: 90px;
+        bottom: 0px;
+    }
+    75% {
+        top: 0px;
+        bottom: 0px;
+    }
+    100% {
+        top: 100px;
+        bottom: 0px;
+    }
+}
+
+.purple {
+    background-color: rgb(128, 53, 199) !important;
+    opacity: 0.7 !important;
+}
+
+.blue {
+    background-color: rgb(53, 170, 199) !important;
+    opacity: 0.7 !important;
+}
+
+.orange {
+    background-color: rgb(211, 99, 8) !important;
+    opacity: 0.7 !important;
+}
+
+.padding {
+    color: #fff !important;
+    opacity: 0.9 !important;
+}
+
+.padding-top {
+    padding-top: 2rem !important;
+}
+
+.right-content-container {
+    margin: 0 auto;
+    width: 96% !important;
+    height: 50% !important;
+    background-color: rgb(253, 250, 250) !important;
+    padding: 1rem !important;
+}
+
+.list-title {
+    width: 155px !important;
+}
+
+.list-title-usertype {
+    width: 150px !important;
+    margin-left: 1rem !important;
+}
+
+.table-title {
+    padding-bottom: .9rem !important;
+    font-weight: bold !important;
+}
+
+.table {
+    width: 100%;
+    padding-top: .7rem !important;
+    padding-bottom: .9rem !important;
+    border-bottom: 1px dotted gray;
+}
+
+.status-button {
+    width: 75px !important;
+    margin-right: .5rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.icon {
+    margin-left: 3rem !important;
+}

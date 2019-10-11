@@ -1,0 +1,119 @@
+.container {
+    background: #C97390 !important;
+}
+
+.sapMShellBrandingBar {
+    height: 0px !important
+}
+
+.calculator-container {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    background: #fff !important;
+    border-radius: 5px !important;
+}
+
+.calculator-screen {
+    box-shadow: 0 7px 19px rgba(202, 194, 194, 0.5) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 7px !important;
+    background: linear-gradient(#fff, #B6466A) !important;
+}
+
+.screen-bar {
+    font-size: 13px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    color: rgb(105, 105, 105) !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.3rem !important;
+    padding-top: .2rem !important;
+}
+
+.screen-bar .sapUiIcon {
+    color: rgb(105, 105, 105) !important;
+    margin: 2.5px !important;
+}
+
+.screen-view {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+     
+}
+.screen-view-top{
+    width:100% !important;
+    height: 20% !important;
+  
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.calculate-input {
+    width:100px !important;
+    height: 10px !important;
+   
+}
+
+.screen-view-bottom{
+    width:100% !important;
+    height: 70% !important;
+ 
+}
+
+.input {
+    font-size: 50px !important;
+    color: rgb(190, 36, 113) !important;
+    margin-bottom:-3.2rem !important;
+ 
+}
+
+.result {
+    font-size: 40px !important;
+    color: rgb(133, 133, 133) !important;
+}
+
+.calculator-content {
+    padding: 1rem !important;
+}
+
+/* .sapMFlexBoxWrapNoWrap {
+    background-color: linear-gradient(#fff, #f8b500) !important;
+} */
+
+.cl-btn {
+    padding-left: 1.2rem !important;
+}
+
+.sapMBtnInner {
+    width: 65px !important;
+    color: #f5a8e2 !important;
+    height: 55px !important;
+    border-radius: 10px !important;
+    font-size: 25px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: 1px solid rgb(255, 228, 237) !important;
+    color: rgb(240, 100, 182) !important;
+}
+
+.operator .sapUiIcon {
+    color: gray !important;
+}
+
+.esit .sapMBtnInner {
+    background: rgb(255, 240, 253) !important;
+    width: 145px !important;
+    border: none !important;
+    color: gray !important;
+}
+
+.operator .sapMBtnInner {
+    background: rgb(255, 240, 253) !important;
+    border: none !important;
+    color: gray !important;
+}

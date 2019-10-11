@@ -23,5 +23,9 @@ sap.ui.core.routing.Router.extend("SapUI5Tutorial.Router",{
         var oView = this.getView(viewName,viewType);
         appView.addPage(oView,master);
         appView.to(oView.getId(),"show",data);
+    },
+
+    fontAwesome:function(){
+        
     }
 });

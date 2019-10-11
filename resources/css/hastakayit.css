@@ -1,0 +1,107 @@
+/*hastakayıt*/
+
+ .container {
+    width: 100% !important;
+    background-color: rgb(110, 164, 219);
+}
+
+.content {
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 97% !important;
+    height: 650px !important;
+    background-color: #FAFAFA!important;
+}
+
+.content-nav {
+    height: 30px !important;
+    width: 100% !important;
+    background-color: #DBE5EF !important;
+}
+
+.nav-info {
+    color: rgb(21, 84, 117)!important;
+    font-weight: bold !important;
+}
+
+.avatar {
+    margin-left: 1rem !important;
+    margin-top: 1rem !important;
+}
+
+.name {
+    color: rgb(39, 73, 92)!important;
+    font-size: 1.5rem !important;
+}
+
+.user-information {
+    padding-left: 1rem !important;
+    padding-top: 2.3rem !important;
+}
+
+.phone {
+    margin-bottom: .2rem !important;
+    margin-top: .2rem !important;
+}
+
+.user-information2 {
+    padding-left: 1rem !important;
+    padding-top: 2.5rem !important;
+}
+
+.doctor-info {
+    font-weight: 600 !important;
+    border: 2px dotted black;
+}
+
+.patient-info {
+    color: gray !important;
+    font-weight: 600 !important;
+    padding: .2rem !important;
+}
+
+.link {
+    color: rgb(51, 139, 194) !important;
+}
+
+.personal-information {
+    margin: 0 auto !important;
+    margin-top: 4rem !important;
+    width: 100% !important;
+    padding: .5rem !important;
+    background-color: rgb(207, 234, 248) !important;
+}
+
+.information-box {
+    padding-top: 1rem !important;
+}
+
+.information {
+    padding: .2rem !important;
+    padding-top: .2rem !important;
+}
+
+.information-item {
+    width: 190px !important;
+    margin-top: .5rem !important;
+}
+
+.input1 {
+    width: 325px !important;
+}
+
+.list-line {
+    margin: 0 auto !important;
+    margin-top: 1rem !important;
+    width: 100% !important;
+    padding: .5rem !important;
+    background-color: rgb(247, 191, 119) !important;
+}
+
+.clinic-ıd {
+    color: red !important;
+}
+
+.dotted {
+    border-radius: 1px dotted gray !important;
+}  

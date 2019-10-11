@@ -1,0 +1,165 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.Main.views.DocumentManagement.controller.hesapmakinesi" 
+      xmlns:mvc="sap.ui.core.mvc" 
+      xmlns:core="sap.ui.core" 
+      xmlns="sap.m" 
+      xmlns:f="sap.f" height="100%">
+      <Page showHeader="false" enableScrolling="false">
+            <content>
+                  <FlexBox width="100%" height="100%" alignItems="Center" justifyContent="Center" class="container">
+                        <FlexBox width="350px" height="95%" class="calculator-container" direction="Column" alignContent="Center" justifyContent="Center">
+                              <HBox width="100%" height="30%" class="calculator-screen">
+                                    <HBox width="100%" height="10%" class="screen-bar">
+                                          <VBox>
+                                                <Text text="11.11" class="screen-bar"/>
+                                          </VBox>
+                                          <HBox>
+                                                <core:Icon src="sap-icon://vertical-bar-chart" class="size1" color="#031E48">
+                                                      <core:layoutData>
+                                                            <FlexItemData growFactor="1"/>
+                                                      </core:layoutData>
+                                                </core:Icon>
+                                                <core:Icon src="sap-icon://sort-descending" class="size1" color="#031E48">
+                                                      <core:layoutData>
+                                                            <FlexItemData growFactor="1"/>
+                                                      </core:layoutData>
+                                                </core:Icon>
+                                                <core:Icon src="sap-icon://iphone-2" class="size1" color="#031E48">
+                                                      <core:layoutData>
+                                                            <FlexItemData growFactor="1"/>
+                                                      </core:layoutData>
+                                                </core:Icon>
+                                          </HBox>
+                                    </HBox>
+                                    <VBox width="100%" height="90%" class="screen-view">
+                                          <HBox class="screen-view-top">
+                                          <Text id="calculate-input" class="calculate-input"/>
+                                          </HBox>
+                                          <VBox class="screen-view-bottom">
+                                          <Text id="inputId" class="input"/>
+                                          <Text id="resultId" class="input"/>
+                                          </VBox>
+                                    </VBox>
+                              </HBox>
+
+                              <VBox width="100%" height="75%" class="calculator-content">
+                                    <HBox class="cl-btn" width="100%" height="20%">
+                                          <Button class="operator" text="C" press="onClear">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button class="operator" press="onDelete" icon="sap-icon://nav-back" >
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button class="operator" press="onNumberPress" text="()">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button class="operator" text="/" press="onOperatorPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+
+
+                                    </HBox>
+                                    <HBox class="cl-btn" width="100%" height="20%">
+                                          <Button text="7" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="8" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="9" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button class="operator" text="x" press="onOperatorPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+
+                                    </HBox>
+                                    <HBox class="cl-btn" width="100%" height="20%">
+                                          <Button text="4" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="5" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="6" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button class="operator" text="-" press="onOperatorPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+
+                                    </HBox>
+                                    <HBox class="cl-btn" width="100%" height="20%">
+                                          <Button text="1" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="2" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="3" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button class="operator" text="+" press="onOperatorPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+
+                                    </HBox>
+                                    <HBox class="cl-btn" width="100%" height="20%">
+                                          <Button text="0" press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="," press="onNumberPress">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+                                          <Button text="=" press="onResult" class="esit">
+                                                <layoutData>
+                                                      <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                          </Button>
+
+
+
+                                    </HBox>
+
+                              </VBox>
+                        </FlexBox>
+                  </FlexBox>
+
+            </content>
+      </Page>
+</mvc:View>

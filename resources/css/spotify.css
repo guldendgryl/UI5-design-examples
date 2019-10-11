@@ -1,0 +1,447 @@
+/*spotify*/
+
+.content {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #272727 !important;
+}
+
+.sapMShellBrandingBar {
+    background: transparent !important;
+}
+
+.left-content {
+    width: 15% !important;
+    background-color: #101115 !important;
+    padding-bottom: 1rem !important;
+}
+
+.text-title {
+    color: rgb(230, 228, 228) !important;
+}
+
+.text-title:hover {
+    color: rgb(255, 255, 255) !important;
+}
+
+.sapUiIcon {
+    font-size: 25px !important;
+    color: #c5c4c4 !important;
+    margin-right: 1rem !important;
+}
+
+.text-title {
+    font-size: 15px !important;
+    width: 100px !important;
+    color: #c5c4c4 !important;
+    font-weight: bold !important;
+}
+
+.menu {
+    width: 170px !important;
+    text-align: left !important;
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+    font-size: 25px !important;
+}
+
+.left-fix {
+    position: relative !important;
+}
+
+.up-icon {
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    font-size: 14px !important;
+    margin-bottom: 5px !important;
+    margin-right: 1.8px !important;
+    color: #fff !important;
+}
+
+.left-iconbox {
+    padding: 1rem !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.list-title {
+    font-size: 12px !important;
+    padding: 0.7rem !important;
+    width: 300px !important;
+    color: #c5c4c4 !important;
+    letter-spacing: 1px;
+    margin-top: 3rem !important;
+}
+
+.list {
+    font-size: 14px !important;
+    padding: 0.7rem !important;
+    width: 300px !important;
+    color: #c5c4c4 !important;
+    font-weight: bold !important;
+}
+
+.sapMSFF {
+    border-radius: 30px;
+    height: 20px !important;
+    padding: 0.8rem !important;
+    width: 170px !important;
+    background-color: #fff !important;
+}
+
+.center-content {
+    width: 90% !important;
+    height: 100% !important;
+    background: linear-gradient(rgb(65, 65, 65), #000000) !important;
+}
+
+.sapMImg {}
+
+.sapMLnk {}
+
+.sapUiFixFlexFixed {
+    height: 70px !important;
+}
+
+.fix-icon-box {
+    margin-left: 1rem !important;
+}
+
+.icon-fix {
+    font-size: 15px !important;
+    padding: 2px !important;
+    margin-top:0.5rem !important;
+    color: #fff !important;
+     
+}
+.icon-down-fix{
+   
+    color: #fff !important;
+    
+}
+
+.center-fix {
+    width: 1055px !important;
+    height: 40px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+}
+
+.sapMText {
+    margin-top: 5px;
+}
+
+.center-up-icon {
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    font-size: 14px !important;
+    color: #fff !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #383838 !important;
+    /*scrollstyle*/
+    height: 250px !important;
+}
+
+html.sap-desktop ::-webkit-scrollbar {
+    background-color: #0c0c0c !important;
+    width: 15px !important;
+    overflow-x: hidden;
+}
+
+.user-icon-style {
+    padding-top: 1rem !important;
+    padding-right: 2.5rem !important;
+}
+
+.user-style {
+    color: #fff !important;
+}
+
+.icon-style {
+    font-size: 15px !important;
+    padding: .3rem !important;
+    border: 1px solid rgb(255, 255, 255) !important;
+    border-radius: 50% !important;
+    color: #fff !important
+}
+
+.sapMBtnInner {
+    background: transparent !important;
+    color: #fff !important;
+    margin-left: 0.5rem !important;
+}
+
+.grid1 {
+    width: 1010px !important;
+    border-top: 1px solid #494949 !important;
+}
+
+.song-box {
+    padding-left: 3rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.sapMBtnInner {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.songcontent-style {
+    color: gray !important;
+}
+
+.fix-left-icon {
+    margin: 1rem !important;
+}
+
+.sapMScrollContScroll {
+    width: 90% !important;
+}
+
+.image-style {
+    width: 190px !important;
+    height: 190px !important;
+    padding-right: 1rem !important;
+    position: relative !important;
+}
+
+.image-style-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #101115 !important;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.image .image-style-back .icon {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-style:hover {
+    opacity: 0.5;
+}
+
+.title-style {
+    color: #fff !important;
+    font-size: 15px !important;
+    width: 150px !important;
+}
+
+.song-content-style {
+    color: #b9b9b9 !important;
+    letter-spacing: 0.5px !important;
+    padding-top: 0.3rem !important;
+}
+
+.h3 {
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    padding: 1rem !important;
+}
+
+.list2-image-style {
+    width: 160px !important;
+    height: 160px !important;
+    padding: 0.5rem !important;
+    border-radius: 50% !important;
+    margin-left: 1rem !important;
+}
+
+.list2-title-style {
+    color: #fff !important;
+    font-size: 15px !important;
+    width: 150px !important;
+    margin-left:1.5rem !important;
+}
+
+.list2-title-all {
+    width: 170px !important;
+    margin-left:1rem !important;
+    padding-left: 1rem !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.loader, .loader:before, .loader:after {
+    background: #ffffff;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+
+.loader {
+    color: #ffffff;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 11px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+.loader:before, .loader:after {
+    position: absolute;
+    top: 0;
+    content: '';
+}
+
+.loader:before {
+    left: -1.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.loader:after {
+    left: 1.5em;
+}
+
+@-webkit-keyframes load1 {
+    0%, 80%, 100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+@keyframes load1 {
+    0%, 80%, 100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+footer {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    background-color: #272727 !important;
+    height: 4.5rem !important;
+    position: relative;
+}
+
+.sapContrast {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.footer-left {
+    width: 20% !important;
+    position: absolute !important;
+    margin-top: -0.5rem !important;
+}
+
+.footer-image {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+.footer-song-title {
+    margin-top: 0.5rem !important;
+    margin-left: 1rem !important;
+}
+
+.footer-center {
+    width: 60% !important;
+    height: 100% !important;
+    position: absolute !important;
+    margin-left: 18rem !important;
+}
+
+.media-style {
+    margin-left: 18rem !important;
+}
+
+.soundbar {
+    width: 60% !important;
+    height: 6px !important;
+    border-radius: 5px !important;
+    background-color: #3b3b3b !important;
+    margin-left: 7rem !important;
+
+}
+
+.footer-center-pauseicon:hover+.soundbar .content-name {
+    transform: translateX(-150%);
+    font-size: 14px;
+    color: #5fa8f3;
+}
+
+.footer-center-pauseicon:hover+.soundbar::after{
+    transform: translateX(0%);
+}
+
+
+
+.footer-right {
+    width: 20% !important;
+    height: 100% !important;
+    position: absolute !important;
+}
+
+.footer-center-icon {
+    font-size: 15px !important;
+}
+
+.footer-center-icon:hover, .footer-center-pauseicon:hover {
+    color: #fff !important;
+}
+
+.footer-center-pauseicon {
+    font-size: 18px !important;
+    padding: 10px !important;
+    width: 15px !important;
+    height: 10px !important;
+    border: 1px solid rgb(255, 255, 255) !important;
+    border-radius: 50% !important;
+    color: rgb(214, 214, 214) !important;
+    margin-top: -10px !important;
+    margin-bottom: 6px !important;
+    padding-bottom: 18px !important;
+}
+
+.footer-right {
+    position: absolute !important;
+    right: 0 !important;
+}
+
+.footer-right-icon {
+    font-size: 20px !important;
+    position: relative !important;
+    margin-right:1rem !important;
+}
+
+.icon-right {
+    position: absolute !important;
+    right: 0 !important;
+}

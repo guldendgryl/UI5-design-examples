@@ -1,0 +1,120 @@
+/*BOOKSTORE*/
+
+.content {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #e7e7e7 !important;
+}
+
+.fix-content-style {
+    width: 992px !important;
+}
+
+.left-content {
+    width: 15% !important;
+    background-color: #ffffff !important;
+}
+
+.left-title {
+    color: #303030 !important;
+    padding: 1.5rem !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+}
+
+.left-box {
+    padding: 1rem !important;
+}
+
+.text-title {
+    color: #272727 !important;
+    padding: .3rem !important;
+    margin-top: 0.5rem !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+}
+
+.text {
+    color: rgb(121, 119, 119) !important;
+    padding: .3rem !important;
+    font-size: 13px !important;
+}
+
+.text:hover {
+    color: rgb(27, 27, 27) !important;
+}
+
+.right-content {
+    width: 85% !important;
+    height: 100% !important;
+   
+}
+
+.sapMSFF {
+    border-radius: 30px;
+    height: 28px !important;
+    width: 200px !important;
+    background-color: transparent !important;
+    margin-left: 15px !important;
+    margin-top:1rem !important;
+}
+
+.sapMText {
+    margin-bottom: 1rem !important;
+}
+
+.summary-box {
+    margin-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.summary-grid {
+    width: 100% !important;
+    padding-top: 1rem !important;
+    padding-left:1rem !important;
+
+}
+
+.summary-image-style {
+    width: 100px !important;
+}
+
+.summary-text {
+    margin-top: 1rem !important;
+    color: #494949 !important;
+}
+
+.summary-title {
+    font-size: 25px !important;
+    font-weight: 900px !important;
+    color: #1a1919 !important;
+}
+
+.grid-title {
+    font-size: 25px !important;
+    font-weight: 900px !important;
+    color: #1a1919 !important;
+    margin-left: 3rem !important;
+    margin-top:2rem !important;
+}
+
+.books-box {
+    padding-bottom: 2rem !important;
+   
+}
+
+.image-style {
+     
+    width: 60% !important;
+}
+
+.title {
+    padding-top: .5rem !important;
+    
+    color: #272727 !important;
+}
+
+.author {
+     
+    color: rgb(163, 160, 160) !important;
+}
