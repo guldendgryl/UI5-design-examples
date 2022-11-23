@@ -10,7 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "font-awesome": "^4.7.0",
     "font-awesome-openui5": "^3.1.0",
     "ui5-fontawesome": "^1.2.1"
